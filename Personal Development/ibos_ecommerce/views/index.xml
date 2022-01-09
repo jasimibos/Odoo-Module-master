@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="home_page" model="website.page">
+        <field name="name">Home Page</field>
+        <field name="website_published">True</field>
+        <field name="url">/</field>
+        <field name="type">qweb</field>
+        <field name="key">ibos_ecommerce.home_page</field>
+        <field name="arch" type="xml">
+            <t t-name="ibos_ecommerce.home_page_template">
+                <t t-call="website.layout">
+                    <!-- Start slider -->
+                    <section id="aa-slider">
+                        <div class="aa-slider-area">
+                            <div id="sequence" class="seq">
+                                <div class="seq-screen">
+                                    <ul class="seq-canvas">
+                                        <t t-foreach="slider" t-as="slider">
+                                            <li>
+                                                <div class="seq-model">
+
+                                                    <img t-attf-src="/web/image?model=image.slider&amp;field=image&amp;id=#{slider.id}"
+                                                         class="d-block w-100" t-alt="{slider.name}"/>
+                                                </div>
+                                                <div class="seq-title">
+
+                                                    <h2>
+                                                        <t t-esc="slider.name"/>
+                                                    </h2>
+
+                                                    <a href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW
+                                                    </a>
+                                                </div>
+                                            </li>
+                                        </t>
+
+                                    </ul>
+                                </div>
+
+
+                                <!-- slider navigation btn -->
+                                <fieldset class="seq-nav" aria-controls="sequence" aria-label="Slider buttons">
+                                    <a type="button" class="seq-prev" aria-label="Previous">
+                                        <span class="fa fa-angle-left"></span>
+                                    </a>
+                                    <a type="button" class="seq-next" aria-label="Next">
+                                        <span class="fa fa-angle-right"></span>
+                                    </a>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- / slider -->
+
+                    <section id="aa-promo">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="aa-promo-area">
+                                        <div class="row">
+                                            <!-- promo left -->
+
+                                            <!-- promo right -->
+                                            <div class="col-md-12 no-padding">
+                                                <div class="aa-promo-right">
+                                                    <t t-foreach="category1" t-as="category1">
+                                                        <a class="aa-product-img"
+                                                           t-attf-href="/shop/#{slug(category1)}">
+                                                            <div class="aa-single-promo-right">
+                                                                <div class="aa-promo-banner">
+                                                                    <img t-attf-src="/web/image?model=product.public.category&amp;field=image_128&amp;id=#{category1.id}"
+                                                                         alt=""/>
+                                                                    <div class="aa-prom-content">
+
+                                                                        <h4 color="black">
+                                                                            <a t-attf-href="/shop/category/#{slug(category1)}">
+                                                                                <t t-esc="category1.name"/>
+                                                                            </a>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </t>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Product View With Category -->
+
+                    <section id="aa-product">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="aa-product-area">
+                                            <div class="aa-product-inner">
+                                                <!-- start prduct navigation -->
+                                                <ul class="nav nav-tabs aa-products-tab">
+                                                    <li class="">
+                                                        <a href="#men" data-toggle="tab" aria-expanded="false">Men</a>
+                                                    </li>
+
+                                                    <li class="">
+                                                        <a href="#sports" data-toggle="tab" aria-expanded="false">
+                                                            Sports
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#electronics" data-toggle="tab" aria-expanded="true">
+                                                            Electronics
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <!-- Tab panes -->
+                                                <div class="tab-content">
+                                                    <!-- Start men product category -->
+                                                    <div class="tab-pane fade active in" id="men">
+                                                        <ul class="aa-product-catg">
+                                                            <!-- start single product item -->
+
+                                                            <t t-foreach="desk" t-as="desk">
+                                                                <li>
+
+                                                                    <figure>
+                                                                        <a class="aa-product-img"
+                                                                           t-attf-href="/shop/product/#{slug(desk)}">
+
+                                                                            <img t-attf-src="/web/image?model=product.template&amp;field=image_128&amp;id=#{desk.id}"
+                                                                                 class="d-block w-100" alt=""/>
+                                                                        </a>
+                                                                        <a class="aa-add-card-btn" href="#"><span
+                                                                                class="fa fa-shopping-cart"></span>Add
+                                                                            To
+                                                                            Cart
+                                                                        </a>
+
+
+                                                                        <figcaption>
+                                                                            <h4 class="aa-product-title">
+                                                                                <a href="#">
+                                                                                    <t t-esc="desk.name"/>
+                                                                                </a>
+                                                                            </h4>
+                                                                            <span class="aa-product-price">
+                                                                                <t t-esc="desk.list_price"/>
+                                                                            </span>
+
+                                                                        </figcaption>
+                                                                    </figure>
+
+                                                                    <!-- product badge -->
+
+                                                                </li>
+                                                            </t>
+                                                        </ul>
+
+                                                    </div>
+                                                    <!-- / men product category -->
+
+                                                    <!-- start sports product category -->
+                                                    <div class="tab-pane fade" id="sports">
+                                                        <ul class="aa-product-catg">
+                                                            <!-- start single product item -->
+                                                            <t t-foreach="furniture" t-as="furniture">
+                                                                <li>
+                                                                    <figure>
+                                                                        <a class="aa-product-img"
+                                                                           t-attf-href="/shop/product/#{slug(furniture)}">
+
+                                                                            <img t-attf-src="/web/image?model=product.template&amp;field=image_128&amp;id=#{furniture.id}"
+                                                                                 class="d-block w-100" alt=""/>
+                                                                        </a>
+                                                                        <a class="aa-add-card-btn" href="#"><span
+                                                                                class="fa fa-shopping-cart"></span>Add
+                                                                            To
+                                                                            Cart
+                                                                        </a>
+                                                                        <figcaption>
+                                                                            <h4 class="aa-product-title">
+                                                                                <a href="#">
+                                                                                    <t t-esc="furniture.name"/>
+                                                                                </a>
+                                                                            </h4>
+                                                                            <span class="aa-product-price">
+                                                                                <t t-esc="furniture.list_price"/>
+                                                                            </span>
+
+                                                                        </figcaption>
+                                                                    </figure>
+
+                                                                    <!-- product badge -->
+
+                                                                </li>
+                                                            </t>
+
+                                                        </ul>
+
+                                                    </div>
+                                                    <!-- / sports product category -->
+                                                    <!-- start electronic product category -->
+                                                    <div class="tab-pane fade" id="electronics">
+                                                        <ul class="aa-product-catg">
+                                                            <!-- start single product item -->
+                                                            <t t-foreach="furniture" t-as="furniture">
+                                                                <li>
+                                                                    <figure>
+                                                                        <a class="aa-product-img"
+                                                                           t-attf-href="/shop/product/#{slug(furniture)}">
+
+                                                                            <img t-attf-src="/web/image?model=product.template&amp;field=image_128&amp;id=#{furniture.id}"
+                                                                                 class="d-block w-100" alt=""/>
+                                                                        </a>
+                                                                        <a class="aa-add-card-btn" href="#"><span
+                                                                                class="fa fa-shopping-cart"></span>Add
+                                                                            To
+                                                                            Cart
+                                                                        </a>
+                                                                        <figcaption>
+                                                                            <h4 class="aa-product-title">
+                                                                                <a href="#">
+                                                                                    <t t-esc="furniture.name"/>
+                                                                                </a>
+                                                                            </h4>
+                                                                            <span class="aa-product-price">
+                                                                                <t t-esc="furniture.list_price"/>
+                                                                            </span>
+
+                                                                        </figcaption>
+                                                                    </figure>
+
+                                                                    <!-- product badge -->
+
+                                                                </li>
+                                                            </t>
+
+
+                                                        </ul>
+
+                                                    </div>
+                                                    <!-- / electronic product category -->
+                                                </div>
+                                                <!-- quick view modal -->
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Product View With Category -->
+
+                    <section id="aa-banner">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="aa-banner-area">
+                                            <a href="#">
+                                                <img src="https://cdn.statically.io/img/ibos.io/f=auto%2Cq=95/wp-content/uploads/2021/08/01-1.jpg"
+                                                     alt="fashion banner img" style="height:150px; width:100%"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section id="aa-support">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="aa-support-area">
+                                        <!-- single support -->
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <div class="aa-support-single">
+                                                <span class="fa fa-truck"></span>
+                                                <h4>FREE SHIPPING</h4>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam,
+                                                    nobis.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <!-- single support -->
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <div class="aa-support-single">
+                                                <span class="fa fa-clock-o"></span>
+                                                <h4>30 DAYS MONEY BACK</h4>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam,
+                                                    nobis.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <!-- single support -->
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <div class="aa-support-single">
+                                                <span class="fa fa-phone"></span>
+                                                <h4>SUPPORT 24/7</h4>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam,
+                                                    nobis.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="aa-subscribe">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="aa-subscribe-area">
+                                        <h3>Subscribe our newsletter</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, velit!</p>
+                                        <form action="" class="aa-subscribe-form">
+                                            <input type="email" name="" id="" placeholder="Enter your Email"/>
+                                            <input type="submit" value="Subscribe"/>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                </t>
+            </t>
+        </field>
+    </record>
+    <record id="home_page_link" model="website.menu">
+        <field name="name">Home</field>
+        <field name="page_id" ref="home_page"/>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">90</field>
+    </record>
+
+</odoo>

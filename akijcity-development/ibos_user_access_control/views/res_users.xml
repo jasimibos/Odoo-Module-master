@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="access_label_user_clear_button" model="ir.ui.view">
+        <field name="name">res.users.access.label.button</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button string="Clear Access" type="object" name="action_clear_access_control"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

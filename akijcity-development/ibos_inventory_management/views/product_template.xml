@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="product_template_weight_scale_machine" model="ir.ui.view">
+        <field name="name">product.template.weight.scale.machine</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='default_code']" position="before">
+                <field name="plu_no" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_template_weight_scale_machine_tree" model="ir.ui.view">
+        <field name="name">product.template.weight.scale.machine.tree</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='default_code']" position="before">
+                <field name="plu_no" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!--Product table from view edit @mridul-->
+   <record id="view_product_form_inherit" model="ir.ui.view">
+       <field name="name">product.template.common.form.inherit</field>
+       <field name="model">product.template</field>
+       <field name="inherit_id" ref="product.product_template_only_form_view"/>
+       <field name="arch" type="xml">
+           <xpath expr="//label[@for='standard_price']" position="before">
+               <field name="show_mrp" invisible="1"/>
+               <field name="mrp" string="MRP" attrs="{'invisible': [('show_mrp','=',False)]}"/>
+           </xpath>
+       </field>
+   </record>
+
+   <!-- Product table tree view edit @mridul-->
+   <record id="product_template_tree_inherit" model="ir.ui.view">
+       <field name="name">product.template.product.tree.inherit</field>
+       <field name="model">product.template</field>
+       <field name="inherit_id" ref="product.product_template_tree_view"/>
+       <field name="arch" type="xml">
+           <xpath expr="//field[@name='uom_id']" position="after">
+               <field name="mrp" string="MRP" optional="hide"/>
+           </xpath>
+       </field>
+   </record>
+
+</odoo>
+

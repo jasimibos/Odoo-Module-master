@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_purchase_return_report" model="ir.actions.act_window">
+        <field name="name">Purchase Return</field>
+        <field name="res_model">purchase.return.details.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+    <menuitem id="return_report" name="Purchase Return" action="action_purchase_return_report" parent="purchase.purchase_report" sequence="2" groups="purchase.group_purchase_manager"/>
+</odoo>

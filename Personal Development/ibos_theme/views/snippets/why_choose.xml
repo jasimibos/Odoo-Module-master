@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="why_choose_path" inherit_id="website.snippets" name="Why Choose Us">
+        <xpath expr="//div[@id='snippet_structure']/div[hasclass('o_panel_body')]" position="inside">
+            <t t-snippet="ibos_theme.why_choose"/>
+        </xpath>
+    </template>
+
+    <template id="why_choose" name="Why Choose Us">
+        <!-- section insta starts here -->
+        <section class="why-choose-us">
+            <div class="container">
+                <div class="section-heading mb-4">
+                    <h2 class="heading text-center">Why choose us?</h2>
+                </div>
+                <div class="why-choose-us-content">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-content pb-2 d-flex">
+                                <i class="lnr lnr-rocket fa-2x text-primary"></i>
+                                <div class="content ml-4">
+                                    <h5>Top grade quality</h5>
+                                    <p>Here at Droggol, we take quality very seriously. Our team of expert Odoo
+                                        developers ensures every guideline of Odoo is met and so our apps are super
+                                        fast, interactive and fully secured.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-content pb-2 d-flex">
+                                <i class="lnr lnr-clock fa-2x text-gamma"></i>
+                                <div class="content ml-4">
+                                    <h5>Get quick support</h5>
+                                    <p>We believe good support is the first key behind the successful implementation.
+                                        On-time and quality support provided by our team is the most loved thing by our
+                                        customers.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-content pb-2 d-flex">
+                                <i class="lnr lnr-hourglass fa-2x text-beta"></i>
+                                <div class="content ml-4">
+                                    <h5>Years of experience</h5>
+                                    <p>We have a long history with Odoo. We have expert team who are working on Odoo
+                                        since version 5. This helps us deliver on time solutions with the best quality.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-content pb-2 d-flex">
+                                <i class="lnr lnr-layers fa-2x text-epsilon"></i>
+                                <div class="content ml-4">
+                                    <h5>Wide range of services</h5>
+                                    <p>Our wide range of services helps you maintain the whole project under the same
+                                        roof. This ensures the best quality and faster delivery of your projects.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-content pb-2 d-flex">
+                                <i class="lnr lnr-pointer-up fa-2x text-delta"></i>
+                                <div class="content ml-4">
+                                    <h5>Well tested solutions</h5>
+                                    <p>All of our solutions need to pass three different phases of testing to ensure
+                                        that our apps are fast, secure, user-friendly and bug-free.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-content pb-2 d-flex">
+                                <i class="lnr lnr-mustache fa-2x text-primary"></i>
+                                <div class="content ml-4">
+                                    <h5>Dedicated member</h5>
+                                    <p>We keep the same developer and manager throughout the project. This directs to
+                                        the better quality and faster execution of the project.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-content pb-2 d-flex">
+                                <i class="lnr lnr-book fa-2x text-gamma"></i>
+                                <div class="content ml-4">
+                                    <h5>In-depth documentation</h5>
+                                    <p>We provide complete documentation for all of our solutions. This will help you to
+                                        have a clear picture of all of the features. We even provide on demand demo to
+                                        have a better view.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-content pb-2 d-flex">
+                                <i class="lnr lnr-select fa-2x text-info"></i>
+                                <div class="content ml-4">
+                                    <h5>Improved usability</h5>
+                                    <p>Our usability experts ensure that our solutions are easy to use out of the box.
+                                        They ensure that even most complex solutions are easy to understand by the
+                                        end-user.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-content pb-2 d-flex">
+                                <i class="lnr lnr-heart fa-2x text-epsilon"></i>
+                                <div class="content ml-4">
+                                    <h5>Working with love</h5>
+                                    <p>Instead of just working, we love to see how our solutions are transforming our
+                                        customer's business. To make our customers happy, our goal is to keep our
+                                        solutions very easy yet powerful.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section insta ends here -->
+    </template>
+</odoo>

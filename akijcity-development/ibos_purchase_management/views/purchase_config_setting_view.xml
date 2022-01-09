@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_purchase" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.purchase</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="25"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='purchase_setting_container']" position="after">
+                <h2>Validation</h2>
+                <div class="row mt16 o_settings_container">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="quantity_validation"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="quantity_validation" string="Demand quantity validation"/>
+                            <div class="text-muted">
+                                validation for checking if ordered quantity is greater then validate quantity or not
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_config_settings_view_form_purchase_inherit" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.purchase</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="25"/>
+        <field name="inherit_id" ref="purchase.res_config_settings_view_form_purchase"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='module_purchase_requisition']/../.." position="after">
+                <div class="col-12 col-lg-6 o_setting_box"
+                     title="Calls for tenders are used when you want to generate requests for quotations to several vendors for a given set of products. You can configure per product if you directly do a Request for Quotation to one vendor or if you want a Call for Tenders to compare offers from several vendors.">
+                    <div class="o_setting_left_pane">
+                        <field name="sales_prise_and_margin"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="sales_prise_and_margin" string="Show Sales Price and margin on Purchase"/>
+                        <div class="text-muted">
+                            Show sales prise and Margin during Purchase
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

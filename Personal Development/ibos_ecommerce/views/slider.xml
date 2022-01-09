@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- === Services Page === -->
+    <record id="image_slider" model="website.page">
+        <field name="name">Slider Page</field>
+        <field name="website_published">True</field>
+        <field name="url">/</field>
+        <field name="type">qweb</field>
+        <field name="key">ibos_ecommerce.image_slider</field>
+        <field name="arch" type="xml">
+            <t t-name="ibos_ecommerce.image_slider_template">
+                <t t-call="website.layout">
+                    <!-- Start slider -->
+                    <section id="aa-slider">
+                        <div class="aa-slider-area">
+                            <div id="sequence" class="seq">
+                                <div class="seq-screen">
+                                    <ul class="seq-canvas">
+                                        <!-- single slide item -->
+                                        <li>
+                                            <div class="seq-model">
+                                                <img src="img/slider/1.jpg" alt="Men slide img"/>
+                                            </div>
+                                            <div class="seq-title">
+                                                <span>Save Up to 75% Off</span>
+                                                <h2>Men Collection</h2>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                    Minus, illum.
+                                                </p>
+                                                <a href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <!-- single slide item -->
+                                        <li>
+                                            <div class="seq-model">
+                                                <img src="img/slider/2.jpg" alt="Wristwatch slide img"/>
+                                            </div>
+                                            <div class="seq-title">
+                                                <span>Save Up to 40% Off</span>
+                                                <h2>Wristwatch Collection</h2>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                    Minus, illum.
+                                                </p>
+                                                <a href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <!-- single slide item -->
+                                        <li>
+                                            <div class="seq-model">
+                                                <img src="img/slider/3.jpg" alt="Women Jeans slide img"/>
+                                            </div>
+                                            <div class="seq-title">
+                                                <span>Save Up to 75% Off</span>
+                                                <h2>Jeans Collection</h2>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                    Minus, illum.
+                                                </p>
+                                                <a href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <!-- single slide item -->
+                                        <li>
+                                            <div class="seq-model">
+                                                <img src="img/slider/4.jpg" alt="Shoes slide img"/>
+                                            </div>
+                                            <div class="seq-title">
+                                                <span>Save Up to 75% Off</span>
+                                                <h2>Exclusive Shoes</h2>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                    Minus, illum.
+                                                </p>
+                                                <a href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <!-- single slide item -->
+
+                                    </ul>
+                                </div>
+                                <!-- slider navigation btn -->
+                                <fieldset class="seq-nav" aria-controls="sequence" aria-label="Slider buttons">
+                                    <a type="button" class="seq-prev" aria-label="Previous">
+                                        <span class="fa fa-angle-left"></span>
+                                    </a>
+                                    <a type="button" class="seq-next" aria-label="Next">
+                                        <span class="fa fa-angle-right"></span>
+                                    </a>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- / slider -->
+
+                </t>
+            </t>
+        </field>
+    </record>
+
+
+</odoo>

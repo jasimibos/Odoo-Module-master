@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="purchase_report_return_details">
+            <t t-call="web.html_container">
+                <!--            <t t-call="web.basic_layout">-->
+                <t t-call="ibos_purchase_management.new_internal_layout">
+                    <div class="page">
+                        <div class="container">
+                            <div class="purchase-return-inner"
+                                 style="display: flex;justify-content: space-between;flex-direction: column;position: relative;">
+                                <div>
+                                    <h3 style="text-align:center;">Purchase Return</h3>
+                                    <div class="row" style="margin:20px 0;text-align:center;">
+                                        <div class="col-12">
+                                            <p>From:
+                                                <b>
+                                                    <t t-esc="date_start"/>
+                                                </b>
+                                                to
+                                                <b>
+                                                    <t t-esc="date_end"/>
+                                                </b>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <p style="margin:20px 0">Business Unit:
+                                        <span t-esc="business_unit"/>
+                                    </p>
+
+                                    <p style="margin:20px 0">Print Date:
+                                        <span t-esc="current_date"/>
+                                    </p>
+                                </div>
+                                <div class="purchase-return-table" style="padding-bottom: 75px;">
+                                    <table class="table table-sm">
+                                        <thead>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Transfer ID</th>
+                                                <th>Product Name</th>
+                                                <th>Vendor</th>
+                                                <th>Quantity</th>
+                                                <th>Unit Price</th>
+                                                <th>Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <t t-if="all_return_data">
+                                                <t t-foreach="all_return_data" t-as="rt">
+                                                    <tr>
+                                                        <td>
+                                                            <t t-esc="rt['date']"/>
+                                                        </td>
+                                                        <td>
+                                                            <t t-esc="rt['Transfer_id']"/>
+                                                        </td>
+                                                        <td>
+                                                            <t t-esc="rt['return_product_name']"/>
+                                                            <t t-if="rt['lot_number']">
+                                                                <br/>
+                                                                <span>Lot/Serial:
+                                                                    <t t-esc="rt['lot_number']"/>
+                                                                </span>
+                                                            </t>
+                                                        </td>
+                                                        <td>
+                                                            <t t-esc="rt['vendor_name']"/>
+                                                        </td>
+                                                        <td>
+                                                            <t t-esc="rt['return_Quantity']"/>
+                                                            <span style="font-size: 10px;">
+                                                                <t t-esc="rt['UOM']"/>
+                                                            </span>
+                                                        </td>
+                                                        <td>
+                                                            <t t-esc="rt['unit_price']"/>
+                                                        </td>
+                                                        <td>
+                                                            <t t-esc="rt['amount_total']"/>
+                                                        </td>
+                                                    </tr>
+                                                </t>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td><b>Total</b></td>
+                                                    <td>
+                                                        <b><t t-esc="qty_total"/></b>
+                                                    </td>
+                                                    <td>
+                                                        <b><t t-esc="unit_price_total"/></b>
+                                                    </td>
+                                                    <td>
+                                                        <b><t t-esc="total_total"/></b>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="row purchase-return-footer">
+                                    <div class="col-3 h-30">
+                                        <p>
+                                            <b>Reported By</b>
+                                        </p>
+                                    </div>
+                                    <div class="col-6 h-30"></div>
+                                    <div class="col-3 h-30">
+                                        <p>
+                                            <b>Authorized By</b>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

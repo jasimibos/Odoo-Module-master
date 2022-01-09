@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="assets_backend_index" name="index pos ui" inherit_id="point_of_sale.index">
+        <xpath expr="//head" position="inside">
+            <script type="text/javascript" src="/ibos_pos_invoce_receipt/static/src/libs/js/jquery-barcode-last.min.js"/>
+        </xpath>
+    </template>
+
+    <template id="assets_backend" name="ibos_pos_invoce_receipt assets" inherit_id="point_of_sale.assets">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/ibos_pos_invoce_receipt/static/src/js/model.js"/>
+            <script type="text/javascript" src="/ibos_pos_invoce_receipt/static/src/js/order.js"/>
+            <script type="text/javascript" src="/ibos_pos_invoce_receipt/static/src/js/screens.js"/>
+            <link rel="stylesheet" href="/ibos_pos_invoce_receipt/static/src/css/pos_receipt_design.css" />
+        </xpath>
+    </template>
+</odoo>

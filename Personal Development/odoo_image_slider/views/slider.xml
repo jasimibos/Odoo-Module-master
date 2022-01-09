@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="result_search" model="ir.ui.view">
+        <field name="name">image.slider.search</field>
+        <field name="model">image.slider</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <filter string="By Name" name="Image"/>
+                <separator/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="image_form" model="ir.ui.view">
+        <field name="name">view_image.slider.form</field>
+        <field name="model">image.slider</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    <group>
+                        <field name="name"/>
+                        <field name="image" widget="image" class="oe_right oe_image_custom"
+                               style="width: 700px; height: 300px;"/>
+                        <field name="active" invisible="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="image_tree" model="ir.ui.view">
+        <field name="name">view_image.slider.tree</field>
+        <field name="model">image.slider</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="image_slider_action" model="ir.actions.act_window">
+        <field name="name">Product Slider</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">image.slider</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Design your slide!!
+            </p>
+        </field>
+    </record>
+
+    <menuitem name="Slider"
+              id="chat_room_menu"
+              sequence="70"
+              action="image_slider_action"
+              parent="website.menu_website_global_configuration"/>
+</odoo>

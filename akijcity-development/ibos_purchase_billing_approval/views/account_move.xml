@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="account_move_bill_approval" model="ir.ui.view">
+        <field name="name">account.move.purchase.bill.approval</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_post']" position="replace">
+                <button name="action_post" class="btn btn-primary"
+                        attrs="{'invisible': ['|', '|', ('state', '=', 'refused'), ('state', '=', 'posted'), ('state', '=', 'cancel')]}"
+                        string="Approve"
+                        type="object"
+                        groups="branch_customized.group_branch_user_accounts_manager"/>
+                <button name="action_refused"
+                        attrs="{'invisible': ['|', '|', ('state', '=', 'refused'), ('state', '=', 'posted'), ('state', '=', 'cancel')]}"
+                        string="Refuse"
+                        type="object"
+                        groups="branch_customized.group_branch_user_accounts_manager"/>
+
+                <button name="button_draft"
+                        attrs="{'invisible': ['|', '|', '|', ('state', '=', 'posted'), ('state', '=', 'draft'), ('state', '=', 'cancel')]}"
+                        string="Reset to draft"
+                        type="object"/>
+
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,26 @@
+<templates id="template" xml:space="preserve">
+    <t t-extend="OrderReceipt">
+        <t t-jquery=".rate" t-operation="before">
+            <t t-if="widget.pos.config.show_mrp_on_pos_recipt">
+                <th class='qty' style='text-align:center;width: 15%;font-size: 12px;'>MRP</th>
+            </t>
+        </t>
+
+        <t t-jquery=".price_line" t-operation="before">
+            <t t-if="widget.pos.config.show_mrp_on_pos_recipt">
+                <td class="pos-left-align"
+                    style='text-align:right;width: 25%;padding: 2px 0px;font-size: 12px;padding-right: 1.5px;'>
+                    <t t-esc="line.product_description"/>
+                    <t t-esc="widget.format_currency_no_symbol(line.mrp)"/>
+                </td>
+            </t>
+        </t>
+
+<!--        <t t-jquery=".orderlines" t-operation="before">-->
+<!--            <tr t-foreach="mrp" t-as="l">-->
+<!--                <t t-esc="l.mrp" />-->
+<!--            </tr>-->
+<!--        </t>-->
+
+    </t>
+</templates>

@@ -1,0 +1,8 @@
+<templates id="template" xml:space="preserve">
+    <t t-extend="OrderReceipt">
+        <t t-jquery=".barcode_" t-operation="before">
+            <span><p>Total Item: <b style='color: red;'><t t-if="total_products" t-esc="total_products" /></b>Total QTY:
+                <b style='color: red;'><t t-if="total_Qtys" t-esc="total_Qtys"/></b></p></span>
+        </t>
+    </t>
+</templates>

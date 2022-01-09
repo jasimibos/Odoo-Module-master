@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_report_by_payment_type" model="ir.actions.report">
+            <field name="name">Inventory Transaction And Movement Report</field>
+            <field name="model">inventory.report.customize</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">inventory_report_customizer.report_inventory_type_details</field>
+            <field name="report_file">inventory_report_customizer.report_inventory_type_details</field>
+        </record>
+    </data>
+</odoo>
+

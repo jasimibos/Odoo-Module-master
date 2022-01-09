@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="pos_config_view_stock_config" model="ir.ui.view">
+        <field name="name">pos.config.stock.config</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='iface_big_scrollbars']/../.." position="after">
+                <div class="col-12 col-lg-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="show_product_qty"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="show_product_qty"/>
+                        <div class="text-muted">
+                            Show Product Quantity in product left side (opposite of price)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="allow_order_out_of_stock"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="allow_order_out_of_stock"/>
+                        <div class="text-muted">
+                            POS order when product also product not in warehouse.
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="purchase_order_payment_status_tree" model="ir.ui.view">
+        <field name="name">purchase.order.payment.status.tree</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_view_tree"></field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_status']" position="after">
+                <field name="payment_status" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="purchase_quotation_payment_status_tree" model="ir.ui.view">
+        <field name="name">purchase.quotation.payment.status.tree</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_tree"></field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_status']" position="after">
+                <field name="payment_status" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="purchase_quotation_order_line_form" model="ir.ui.view">
+        <field name="name">purchase.quotation.order.form</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"></field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="after">
+                <field name="show_lst_price_and_margin" invisible="1"/>
+                <field name="lst_price" optional="hide" attrs="{'invisible': [('show_lst_price_and_margin','=',False)]}"/>
+                <field name="profit_margin" optional="hide" attrs="{'invisible': [('show_lst_price_and_margin','=',False)]}"/>
+                <field name="show_mrp" invisible="1"/>
+                <field name="mrp" optional="hide" nolabel="1" attrs="{'invisible': [('show_mrp','=',False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>
+

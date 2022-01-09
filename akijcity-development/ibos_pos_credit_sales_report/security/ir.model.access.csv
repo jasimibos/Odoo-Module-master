@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pos_credit_sale_details_wizard_user,pos.credit.sale.details.wizard,model_pos_credit_sale_details_wizard,branch_customized.group_branch_user_salesman,1,1,1,0
+access_res_partner_salesman_user,res.partner.salesman,base.model_res_partner,branch_customized.group_branch_user_salesman,1,1,1,0

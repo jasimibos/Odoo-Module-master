@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_department_form" model="ir.ui.view">
+            <field name="name">res.partner.department.form</field>
+            <field name="model">res.partner.department</field>
+            <field name="arch" type="xml">
+                <form string="department">
+                    <sheet>
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                                attrs="{'invisible': [('active', '=', True)]}"/>
+                        <field name="active" invisible="1"/>
+                        <group col="4">
+                            <field name="name"/>
+                            <field name="parent_id"/>
+                            <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_partner_department_tree" model="ir.ui.view">
+            <field name="name">res.partner.department.tree</field>
+            <field name="model">res.partner.department</field>
+            <field name="arch" type="xml">
+                <tree string="Companies">
+                    <field name="display_name"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="parent_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="partner_department_view_kanban" model="ir.ui.view">
+            <field name="name">res.partner.department.kanban</field>
+            <field name="model">res.partner.department</field>
+            <field name="arch" type="xml">
+                <kanban class="oe_background_grey o_kanban_dashboard o_hr_kanban">
+                    <field name="name"/>
+                    <field name="company_id"/>
+                    <field name="color"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="#{!selection_mode ? kanban_color(record.color.raw_value) : ''}">
+                                <div t-attf-class="o_kanban_card_header">
+                                    <div class="o_kanban_card_header_title">
+                                        <div class="o_primary">
+                                            <field name="name"/>
+                                        </div>
+                                        <div class="o_secondary">
+                                            <field name="company_id" groups="base.group_multi_company"/>
+                                        </div>
+                                    </div>
+                                    <div class="o_kanban_manage_button_section" t-if="!selection_mode">
+                                        <a class="o_kanban_manage_toggle_button" href="#">
+                                            <i class="fa fa-ellipsis-v" role="img" aria-label="Manage" title="Manage"/>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="container o_kanban_card_content" t-if="!selection_mode">
+                                    <div class="row">
+                                        <div class="col-6 o_kanban_primary_left">
+                                            <button class="btn btn-primary" name="res_partner_action_customer"
+                                                    type="object">Customer
+                                            </button>
+                                        </div>
+                                        <div class="col-6 o_kanban_primary_right">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container o_kanban_card_manage_pane dropdown-menu" role="menu">
+                                    <div class="row">
+                                        <div role="menuitem"
+                                             class="col-4 o_kanban_card_manage_section o_kanban_manage_to_do">
+                                            <div class="o_kanban_card_manage_title">
+                                                <span>To Do</span>
+                                            </div>
+                                        </div>
+                                        <div role="menuitem"
+                                             class="col-4 o_kanban_card_manage_section o_kanban_manage_to_approve">
+                                            <div class="o_kanban_card_manage_title">
+                                                <span>To Approve</span>
+                                            </div>
+                                        </div>
+                                        <div role="menuitem"
+                                             class="col-4 o_kanban_card_manage_section o_kanban_manage_reports">
+                                            <div class="o_kanban_card_manage_title">
+                                                <span>Reporting</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div t-if="widget.editable" class="o_kanban_card_manage_settings row">
+                                        <div role="menuitem" aria-haspopup="true" class="col-8">
+                                            <ul class="oe_kanban_colorpicker" data-field="color" role="menu"/>
+                                        </div>
+                                        <div class="col-4 text-right">
+                                            <a role="menuitem" type="edit">Settings</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="action_partner_department" model="ir.actions.act_window">
+            <field name="name">Customer Deaprtment</field>
+            <field name="res_model">res.partner.department</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <!--        <field name="search_view_id" ref="view_department_filter"/>-->
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new Customer department
+                </p>
+            </field>
+        </record>
+
+        <menuitem
+                id="partner_department_pos_config_pos"
+                name="Partner Department"
+                parent="point_of_sale.menu_point_config_product"
+                action="action_partner_department"
+                groups="point_of_sale.group_pos_manager"/>
+
+        <menuitem
+                id="partner_department_contacts_config"
+                name="Partner Department"
+                parent="contacts.res_partner_menu_config"
+                action="action_partner_department"
+                groups="point_of_sale.group_pos_manager"/>
+    </data>
+</odoo>

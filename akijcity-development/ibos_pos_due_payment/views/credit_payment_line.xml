@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--tree view of the credit off model model-->
+    <record id="customer_credit_payment_tree" model="ir.ui.view">
+        <field name="name">customer.credit.payment.line.tree</field>
+        <field name="model">customer.credit.payment.line</field>
+        <field name="arch" type="xml">
+            <tree string="Credit Deduction Payments" create="false">
+                <field name="partner_id"/>
+                <field name="phone" optional="hide"/>
+                <field name="limit" optional="hide"/>
+                <field name="credit"/>
+                <field name="remaining" optional="hide"/>
+                <field name="amount"/>
+                <field name="current_remaining" optional="hide"/>
+                <field name="payment_date" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="customer_credit_deduction_payment" model="ir.actions.act_window">
+        <field name="name">Credit Deduction Payments</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">customer.credit.payment.line</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new customer in credit deduction
+            </p>
+            <p>
+                helps you easily track all activities related to a customer credit deduction
+            </p>
+        </field>
+    </record>
+
+    <record id="customer_credit_deduction_payment_view_search" model="ir.ui.view">
+        <field name="name">customer.credit.payment.line.search</field>
+        <field name="model">customer.credit.payment.line</field>
+        <field name="arch" type="xml">
+            <search string="Credit Deduction Search">
+                <field name="partner_id"/>
+                <field name="phone"/>
+                <field name="payment_date"/>
+                <group col="8" colspan="4" expand="0" string="Group By">
+                    <filter string="Customers" name="department_id" context="{'group_by':'partner_id'}"/>
+                    <filter string="Date" name="department_id" context="{'group_by':'payment_date'}"/>
+                </group>
+            </search>
+         </field>
+    </record>
+
+    <menuitem id="menu_credit_payment" name="Deduction Payments"
+              parent="ibos_pos_due_payment.menu_credits_root"
+              action="customer_credit_deduction_payment"
+              sequence="151"
+              groups="base.group_user"/>
+
+    <menuitem id="menu_credit_payment_pos" name="Deduction Payments"
+              parent="point_of_sale.menu_point_of_sale"
+              action="customer_credit_deduction_payment"
+              sequence="151"
+              groups="base.group_user"/>
+</odoo>

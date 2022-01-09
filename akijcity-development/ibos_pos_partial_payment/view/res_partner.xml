@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="base_view_partner_form_total_due" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                <button type="object" class="oe_stat_button" icon="fa-shopping-bag" name="action_view_partner_dues"
+                        context="{'default_partner_id': active_id}">
+                    <div class="o_form_field o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="total_due" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                        </span>
+                        <span class="o_stat_text">Due Payment</span>
+                    </div>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

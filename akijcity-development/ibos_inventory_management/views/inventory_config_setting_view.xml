@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+   <record id="res_config_settings_view_form_inherit" model="ir.ui.view">
+       <field name="name">res.config.settings.view.form.inventory</field>
+       <field name="model">res.config.settings</field>
+       <field name="priority" eval="35"/>
+       <field name="inherit_id" ref="stock.res_config_settings_view_form"/>
+       <field name="arch" type="xml">
+           <xpath expr="//field[@name='group_stock_packaging']/../.." position="after">
+               <div class="col-12 col-lg-6 o_setting_box">
+                   <div class="o_setting_left_pane">
+                       <field name="mrp_inventory_and_purchase"/>
+                   </div>
+                   <div class="o_setting_right_pane">
+                       <label for="mrp_inventory_and_purchase" string="Show MRP on Inventory and Purchase"/>
+                       <div class="text-muted">
+                           Show MRP in inventory and purchase
+                       </div>
+                   </div>
+               </div>
+               <div class="col-12 col-lg-6 o_setting_box">
+                   <div class="o_setting_left_pane">
+                       <field name="is_product_type_readonly"/>
+                   </div>
+                   <div class="o_setting_right_pane">
+                       <label for="is_product_type_readonly" string="Is Product type readonly"/>
+                       <div class="text-muted">
+                           Is Product type readonly
+                       </div>
+                   </div>
+               </div>
+               <div class="col-12 col-lg-6 o_setting_box">
+                   <div class="o_setting_right_pane">
+                       <p><b>Please select default product type</b></p>
+                       <field name="type"/>
+                       <div class="text-muted">
+                           Select default product type
+                       </div>
+                   </div>
+               </div>
+               <div class="col-12 col-lg-6 o_setting_box">
+                   <div class="o_setting_left_pane">
+                       <field name="group_product_category"/>
+                   </div>
+                   <div class="o_setting_right_pane">
+                       <label for="group_product_category" string="Same as Product Category and POS Category "/>
+                       <div class="text-muted">
+                           Create product category at inventory and POS same time
+                       </div>
+                   </div>
+               </div>
+           </xpath>
+       </field>
+   </record>
+
+</odoo>

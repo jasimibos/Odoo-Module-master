@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="our_service_path" inherit_id="website.snippets" name="Our Service">
+        <xpath expr="//div[@id='snippet_structure']/div[hasclass('o_panel_body')]" position="inside">
+            <t t-snippet="ibos_theme.our_service"/>
+        </xpath>
+    </template>
+
+    <template id="our_service" name="Our Service">
+        <!-- section insta starts here -->
+        <section class="all-service mt-4 mb-4">
+            <div class="container">
+                <div class="service-heading text-center">
+                    <span class="badge badge-primary bg-primary">All Service</span>
+                    <h2 class="heading">Our Odoo Services</h2>
+                    <p class="sub-heading">Great variety of Odoo services that help you to uplift your awesome business.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- section insta ends here -->
+    </template>
+</odoo>

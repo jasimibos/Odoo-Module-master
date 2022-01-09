@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="res_partner_bank_additional_info" model="ir.ui.view">
+        <field name="name">res.partner.bank.additional.info</field>
+        <field name="model">res.partner.bank</field>
+        <field name="inherit_id" ref="base.view_partner_bank_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='acc_holder_name']" position="after">
+                <field name="acc_branch_name"/>
+                <field name="acc_branch_routing"/>
+                <field name="acc_branch_address"/>
+                <field name="acc_branch_checks_sheet"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

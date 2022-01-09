@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="service_feed_sec" inherit_id="website.snippets" name="Service Feed ">
+        <xpath expr="//div[@id='snippet_structure']/div[hasclass('o_panel_body')]" position="inside">
+            <t t-snippet="ibos_theme.service_feed"/>
+        </xpath>
+    </template>
+
+    <template id="service_feed" name="Service Feed">
+        <section class="service-section">
+            <div class="container">
+                <div class="service">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-12">
+                            <div class="service-heading text-center">
+                                <span class="badge badge-primary bg-primary">For Odoo</span>
+                                <h2 class="heading">Our Services</h2>
+                                <p class="sub-heading">Great variety of Odoo services that help you to uplift your
+                                    awesome business.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-4 shadow lift hover-shadow-lg h-100" style="width: 100%;">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-image">
+                                            <div class="badge badge-alpha-soft rounded-circle mb-4 p-3">
+                                                <i class="lnr lnr-code fa-3x"></i>
+                                            </div>
+                                        </h5>
+                                        <h5 class="card-title">Development</h5>
+                                        <p class="card-text">Customize Odoo modules, integrate with external services,
+                                            migration from the old version and more.
+                                        </p>
+                                        <a href="#" class="btn service-btn badge-alpha-soft">
+                                            <span>Read More</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-4 shadow lift hover-shadow-lg h-100" style="width: 100%;">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-image">
+                                            <div class="badge badge-beta-soft rounded-circle mb-4 p-3">
+                                                <i class="lnr lnr-layers fa-3x"></i>
+                                            </div>
+                                        </h5>
+                                        <h5 class="card-title">Development</h5>
+                                        <p class="card-text">Customize Odoo modules, integrate with external services,
+                                            migration from the old version and more.
+                                        </p>
+                                        <a href="#" class="btn service-btn badge-beta-soft">
+                                            <span>Read More</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-4 shadow lift hover-shadow-lg h-100" style="width: 100%;">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-image">
+                                            <div class="badge badge-delta-soft rounded-circle mb-4 p-3">
+                                                <i class="fa-3x lnr lnr-highlight"></i>
+                                            </div>
+                                        </h5>
+                                        <h5 class="card-title">Development</h5>
+                                        <p class="card-text">Customize Odoo modules, integrate with external services,
+                                            migration from the old version and more.
+                                        </p>
+                                        <a href="#" class="btn service-btn badge-delta-soft">
+                                            <span>Read More</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-4 shadow lift hover-shadow-lg h-100" style="width: 100%;">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-image">
+                                            <div class="badge badge-epsilon-soft rounded-circle mb-4 p-3">
+                                                <i class="lnr lnr-heart-pulse fa-3x"></i>
+                                            </div>
+                                        </h5>
+                                        <h5 class="card-title">Development</h5>
+                                        <p class="card-text">Customize Odoo modules, integrate with external services,
+                                            migration from the old version and more.
+                                        </p>
+                                        <a href="#" class="btn service-btn badge-epsilon-soft">
+                                            <span>Read More</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-4 shadow lift hover-shadow-lg h-100" style="width: 100%;">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-image">
+                                            <div class="badge badge-info-soft rounded-circle mb-4 p-3">
+                                                <i class="lnr lnr-store fa-3x"></i>
+                                            </div>
+                                        </h5>
+                                        <h5 class="card-title">Development</h5>
+                                        <p class="card-text">Customize Odoo modules, integrate with external services,
+                                            migration from the old version and more.
+                                        </p>
+                                        <a href="#" class="btn service-btn badge-info-soft">
+                                            <span>Read More</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-4 shadow lift hover-shadow-lg h-100" style="width: 100%;">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-image">
+                                            <div class="badge badge-gamma-soft rounded-circle mb-4 p-3">
+                                                <i class="lnr lnr-cloud-upload fa-3x"></i>
+                                            </div>
+                                        </h5>
+                                        <h5 class="card-title">Development</h5>
+                                        <p class="card-text">Customize Odoo modules, integrate with external services,
+                                            migration from the old version and more.
+                                        </p>
+                                        <a href="#" class="btn service-btn badge-gamma-soft">
+                                            <span>Read More</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-4 shadow lift hover-shadow-lg h-100" style="width: 100%;">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-image">
+                                            <div class="badge badge-success-soft rounded-circle mb-4 p-3">
+                                                <i class="lnr lnr-graduation-hat fa-3x"></i>
+                                            </div>
+                                        </h5>
+                                        <h5 class="card-title">Development</h5>
+                                        <p class="card-text">Customize Odoo modules, integrate with external services,
+                                            migration from the old version and more.
+                                        </p>
+                                        <a href="#" class="btn service-btn badge-success-soft">
+                                            <span>Read More</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-4 shadow lift hover-shadow-lg h-100" style="width: 100%;">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-image">
+                                            <div class="badge badge-dark-soft rounded-circle mb-4 p-3">
+                                                <i class="lnr lnr-coffee-cup fa-3x"></i>
+                                            </div>
+                                        </h5>
+                                        <h5 class="card-title">Development</h5>
+                                        <p class="card-text">Customize Odoo modules, integrate with external services,
+                                            migration from the old version and more.
+                                        </p>
+                                        <a href="#" class="btn service-btn badge-dark-soft">
+                                            <span>Read More</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="view-btn text-center">
+                    <a href="#" class="btn btn-primary">
+                        <span>View All Service</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- section insta ends here -->
+    </template>
+</odoo>

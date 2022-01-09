@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="odoo_deployment_path" inherit_id="website.snippets" name="Odoo Deployment">
+        <xpath expr="//div[@id='snippet_structure']/div[hasclass('o_panel_body')]" position="inside">
+            <t t-snippet="ibos_theme.odoo_deployment"/>
+        </xpath>
+    </template>
+
+    <template id="odoo_deployment" name="Odoo Deployment">
+        <!-- section insta starts here -->
+<section class="odoo-deployment py-5">
+            <div class="container">
+                <div class="heading text-center pb-4">
+                    <div class="badge badge-gamma-soft rounded-circle mb-4 p-3">
+                        <i class="lnr lnr-cloud-upload fa-3x"></i>
+                    </div>
+                    <h3>Odoo Deployment Services</h3>
+                </div>
+                <div class="service">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-2 shadow lift hover-shadow-lg flex-row align-items-center px-4 py-3" style="width: 100%;">
+                                    <h5 class="card-image mb-0">
+                                        <div class="badge badge-alpha rounded-circle p-3">
+                                            <i class="lnr lnr-store fa-2x"></i>
+                                        </div>
+                                    </h5>
+                                    <div class="sm-card-content text-left ml-3">
+                                        <h6 class="card-title mb-0">Deploy on Cloud</h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-2 shadow lift hover-shadow-lg flex-row align-items-center px-4 py-3" style="width: 100%;">
+                                    <h5 class="card-image mb-0">
+                                        <div class="badge badge-gamma rounded-circle p-3">
+                                            <i class="lnr lnr-cloud-upload fa-2x"></i>
+                                        </div>
+                                    </h5>
+                                    <div class="sm-card-content text-left ml-3">
+                                        <h6 class="card-title mb-0">Manage on Odoo.sh</h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-2 shadow lift hover-shadow-lg flex-row align-items-center px-4 py-3" style="width: 100%;">
+                                    <h5 class="card-image mb-0">
+                                        <div class="badge badge-delta rounded-circle p-3">
+                                            <i class="lnr lnr-rocket fa-2x"></i>
+                                        </div>
+                                    </h5>
+                                    <div class="sm-card-content text-left ml-3">
+                                        <h6 class="card-title mb-0">Performance Tuning</h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-2 shadow lift hover-shadow-lg flex-row align-items-center px-4 py-3" style="width: 100%;">
+                                    <h5 class="card-image mb-0">
+                                        <div class="badge badge-gamma rounded-circle p-3">
+                                            <i class="lnr lnr-map fa-2x"></i>
+                                        </div>
+                                    </h5>
+                                    <div class="sm-card-content text-left ml-3">
+                                        <h6 class="card-title mb-0">Integrate CDN</h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-2 shadow lift hover-shadow-lg flex-row align-items-center px-4 py-3" style="width: 100%;">
+                                    <h5 class="card-image mb-0">
+                                        <div class="badge badge-epsilon rounded-circle p-3">
+                                            <i class="lnr lnr-database fa-2x"></i>
+                                        </div>
+                                    </h5>
+                                    <div class="sm-card-content text-left ml-3">
+                                        <h6 class="card-title mb-0">Automatic Backups </h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-2 shadow lift hover-shadow-lg flex-row align-items-center px-4 py-3" style="width: 100%;">
+                                    <h5 class="card-image mb-0">
+                                        <div class="badge badge-info rounded-circle p-3">
+                                            <i class="lnr lnr-construction fa-2x"></i>
+                                        </div>
+                                    </h5>
+                                    <div class="sm-card-content text-left ml-3">
+                                        <h6 class="card-title mb-0">Maintenance &amp; Support</h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#" class="btn btn-primary mt-4">
+                            <span>See Full Details</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- section insta ends here -->
+    </template>
+</odoo>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="our_mission_path" inherit_id="website.snippets" name="Our Mission">
+        <xpath expr="//div[@id='snippet_structure']/div[hasclass('o_panel_body')]" position="inside">
+            <t t-snippet="ibos_theme.our_mission"/>
+        </xpath>
+    </template>
+
+    <template id="our_mission" name="Our Mission">
+        <!-- section insta starts here -->
+        <section class="our-vision v2 bg-white">
+            <div class="container">
+                <div class="heading text-center">
+                    <div class="badge badge-alpha-soft rounded-circle p-3">
+                        <i class="fa fa-rocket fa-2x"  ></i>
+                    </div>
+                    <h2 class="pt-3 pb-1">What does <span style="color: #0561d1;">iBOS</span> mean?
+                    </h2>
+                    <p class="sub-heading">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis obcaecati quia nisi
+                        adipisci voluptatum, quisquam sequi repellendus ut. Perspiciatis sed labore ea deleniti quaerat
+                        eius odit aut assumenda praesentium qui? Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Corrupti, officia.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+        <!-- section insta ends here -->
+    </template>
+</odoo>

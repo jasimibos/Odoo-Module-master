@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="stock_picking_header_inherit" model="ir.ui.view">
+        <field name="name">stock.picking.header.inherit</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/header/button[@name='action_cancel']" position="after">
+                <button string="Assign To Done" type="object" name="action_assign_to_done" states="assigned" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

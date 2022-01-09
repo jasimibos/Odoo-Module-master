@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="product_details" model="website.page">
+        <field name="name">Product Details Page</field>
+        <field name="website_published">True</field>
+        <field name="url">/product_details</field>
+        <field name="type">qweb</field>
+        <field name="key">ibos_ecommerce.product_details</field>
+        <field name="arch" type="xml">
+            <t t-name="ibos_ecommerce.product_details">
+                <t t-call="website.layout">
+                    <section id="aa-catg-head-banner">
+                        <img src="https://cdn.statically.io/img/ibos.io/f=auto%2Cq=95/wp-content/uploads/2021/08/01-1.jpg"
+                             alt="fashion img" style="width:100%; max-height:300px"/>
+                        <div class="aa-catg-head-banner-area">                            <div class="container">
+                                <div class="aa-catg-head-banner-content">
+                                    <h2>T-Shirt</h2>
+                                    <ol class="breadcrumb">
+                                        <li>
+                                            <a href="index.html">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Product</a>
+                                        </li>
+                                        <li class="active">T-shirt</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </t>
+            </t>
+        </field>
+    </record>
+
+</odoo>

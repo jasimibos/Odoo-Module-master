@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="pos_config_view_form_inherit" model="ir.ui.view">
+        <field name="name">pos.config.form.view.inherit</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='module_pos_discount']/../.." position="after">
+                <div class="col-12 col-lg-6 o_setting_box" id="mrp_show">
+                    <div class="o_setting_left_pane">
+                        <field name="show_mrp_on_pos_recipt"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="show_mrp_on_pos_recipt" string="Show MRP on receipt"/>
+                        <div class="text-muted">
+                            Show MRP on receipt
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="call_to_action_path" inherit_id="website.snippets" name="Call to action ">
+        <xpath expr="//div[@id='snippet_structure']/div[hasclass('o_panel_body')]" position="inside">
+            <t t-snippet="ibos_theme.call_to_action"/>
+        </xpath>
+    </template>
+
+    <template id="call_to_action" name="Call To Action">
+        <!-- section insta starts here -->
+       <section class="contact-section">
+            <div class="container">
+                <div class="home-contact">
+                    <div class="section-content">
+                        <h3>Let's have a talk.</h3>
+                        <p>Don’t be a stranger. Our team is happy to answer all your questions.</p>
+                    </div>
+                    <div class="section-btn">
+                        <a href="#" class="btn btn-primary"><span>Contact Us</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section insta ends here -->
+    </template>
+</odoo>

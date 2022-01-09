@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Inherit quotations search view-->
+        <record id="stock_move_action_inherited" model="ir.ui.view">
+            <field name="name">stock.move.inherit</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.stock_move_action"/>
+
+            <field name="arch" type="xml">
+
+                 <xpath expr="//field[@name='upc_ean_conv']" position="attributes">
+                    <attribute name="attrs">{'invisible':[('is_gs1_nomenclature', '=', True)]}</attribute>
+                </xpath>
+
+                <xpath expr="//record[@id='stock_move_action']" position="attributes">
+                    <field name="context">{'search_default_done': 1, 'search_default_groupby_location_id': 1}</field>
+                </xpath>
+
+
+            </field>
+        </record>
+    </data>
+</odoo>

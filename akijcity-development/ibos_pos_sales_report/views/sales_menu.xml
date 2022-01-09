@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_pos_details_test" model="ir.actions.act_window">
+        <field name="name">POS Closing Slip</field>
+        <field name="res_model">pos.sale.details.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+    <menuitem id="Order_details" name="POS Closing Slip" action="action_report_pos_details_test" parent="point_of_sale.menu_point_rep" sequence="5" groups="base.group_user"/>
+</odoo>

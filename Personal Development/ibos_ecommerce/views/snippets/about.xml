@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="product_banner_path" inherit_id="website.snippets" name="Product Banner Tab">
+        <xpath expr="//div[@id='snippet_structure']/div[hasclass('o_panel_body')]" position="inside">
+            <t t-snippet="ibos_ecommerce.product_banner"/>
+        </xpath>
+    </template>
+
+
+    <template id="product_banner_snippet" name="Product Banner">
+        <section class="product_banner_class">
+            <div class="banner_added">
+                <br/>
+                <br/>
+                <br/>
+                <hr/>
+                <div class="container">
+                    <div class="alert alert-info">
+                        <h4>Your product tab snippet will be displayed here... Please Save to view the snippet</h4>
+                    </div>
+                </div>
+                <hr/>
+            </div>
+        </section>
+    </template>
+
+
+    <template id="product_banner" name="Product Banner">
+        <!-- Banner section starts here -->
+        <section class="customer-review">
+            <div class="container">
+                <ul>
+                    <t t-foreach="category" t-as="category">
+
+                        <li>
+                            <t t-esc="category.name"/>
+                            <t t-esc="category.id"/>
+                        </li>
+
+                    </t>
+                </ul>
+            </div>
+        </section>
+        <!-- Banner section ends here -->
+    </template>
+</odoo>

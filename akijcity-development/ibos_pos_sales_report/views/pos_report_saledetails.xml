@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="pos_report_saledetails">
+            <t t-call="web.html_container">
+                <t t-call="web.basic_layout">
+                    <div class="page">
+
+                        <style>
+                            .table th, .table td{
+                            padding:0px;
+                            }
+                        </style>
+
+                        <div class="after-header" style="padding-bottom: 10px;padding-top: 15px;">
+                            <div style="text-align:center;">
+                                <img t-att-src="image_data_uri(company_logo)"/>
+                                <p style="margin:0">
+                                    <b>
+                                        <t t-esc="company_name"/>
+                                    </b>
+                                </p>
+                                <p style="margin:0">
+                                    <b>
+                                        <t t-esc="company_address"/>
+                                    </b>
+                                </p>
+                            </div>
+                            <p style="text-align:center;">
+                                <b>POS Closing Slip</b>
+                            </p>
+                            <span>Business Unit:
+                                <strong>
+                                    <t t-esc="business_unit_name"/>
+                                </strong>
+                            </span>
+                            <br/>
+                            <t t-if="responsible_name">
+                                <span>Responsible:</span>
+                                <t t-foreach='responsible_name' t-as='responsible'>
+                                    <b>
+                                        <t t-esc="responsible['name']"/>
+                                    </b>
+                                </t>
+                            </t>
+                            <t t-else="">
+                                <strong>Cashier:</strong>
+                                <br/>
+                            </t>
+                            <br/>
+                            <p style="margin:0">Report Date:
+                                <b>
+                                    <t t-esc="start_date"/>
+                                    to
+                                    <t t-esc="end_date"/>
+                                </b>
+                            </p>
+                            <p style="margin:0">Print Date:
+                                <b>
+                                    <t t-esc="print_date"/>
+                                </b>
+                            </p>
+                        </div>
+                        <div>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td style="width:80%;">Today's Total Sale:</td>
+                                        <td style="width:20%;">
+                                            <b>
+                                                <t t-esc="total_sales"
+                                                   t-options="{'widget': 'float', 'precision': currency_precision}"/>
+                                            </b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:80%;">Today's Total Discount:</td>
+                                        <td style="width:20%;">
+                                            <b>
+                                                <t t-esc="today_discount"
+                                                   t-options="{'widget': 'float', 'precision': currency_precision}"/>
+                                            </b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:80%;">
+                                            Today's Total Return:
+                                        </td>
+                                        <td style="width:20%;">
+                                            <b>
+                                                <t t-esc="today_sale_return"
+                                                   t-options="{'widget': 'float', 'precision': currency_precision}"/>
+                                            </b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:80%;">
+                                            Today's Net Sale:
+                                        </td>
+                                        <td style="width:20%;">
+                                            <b>
+                                                <t t-esc="today_net_sales"
+                                                   t-options="{'widget': 'float', 'precision': currency_precision}"/>
+                                            </b>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <b style="font-size:18px;">Sales Details</b>
+                        <table class="table">
+                            <tbody>
+                                <t t-foreach='payments' t-as='payment'>
+                                    <t t-if="payment['name'] != 'Total'">
+                                        <tr>
+                                            <td style="width:80%;">
+                                                <t t-esc="payment['name']"/>
+                                            </td>
+                                            <td style="width:20%;">
+                                                <b>
+                                                    <t t-esc="payment['total']"
+                                                       t-options="{'widget': 'float', 'precision': currency_precision}"/>
+                                                </b>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <t t-elif="payment['name'] == 'Total'">
+                                        <tr>
+                                            <td style="width:80%;">
+                                                <t t-esc="payment['name']"/>
+                                            </td>
+                                            <td style="width:20%;">
+                                                <b>
+                                                    <t t-esc="payment['total']"
+                                                       t-options="{'widget': 'float', 'precision': currency_precision}"/>
+                                                </b>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </t>
+                            </tbody>
+                        </table>
+
+                        <b style="font-size:18px;">Return Details</b>
+                        <table class="table table-sm">
+                            <tbody>
+                                <tr t-foreach='returns_' t-as='ret'>
+                                    <t t-if="ret['name'] != 'Total'">
+                                        <td style="width:80%">
+                                            <t t-esc="ret['name']"/>
+                                        </td>
+                                        <td style="width:20%;">
+                                            <b>
+                                                <t t-esc="ret['total']"
+                                                   t-options="{'widget': 'float', 'precision': currency_precision}"/>
+                                            </b>
+                                        </td>
+                                    </t>
+                                    <t t-elif="ret['name'] == 'Total'">
+                                        <td>
+                                            <t t-esc="ret['name']"/>
+                                        </td>
+                                        <td>
+                                            <b>
+                                                <t t-esc="ret['total']"
+                                                   t-options="{'widget': 'float', 'precision': currency_precision}"/>
+                                            </b>
+                                        </td>
+                                    </t>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <b>Today's Net Cash:
+                            <t t-esc='net_cash' t-options="{'widget': 'float', 'precision': currency_precision}"/>
+                        </b>
+                        <br/>
+                        <b>Today's Net Credit:
+                            <t t-esc='net_credit' t-options="{'widget': 'float', 'precision': currency_precision}"/>
+                        </b>
+                        <br/>
+                        <b>Total Invoice:
+                            <t t-esc='total_invoice'/>
+                        </b>
+                        <br/>
+                        <br/>
+                        <p style="font-size:10px;text-align:center;">Developed By iBOS Limited</p>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

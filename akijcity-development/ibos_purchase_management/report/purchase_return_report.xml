@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="purchase_return_report" model="ir.actions.report">
+        <field name="name">Purchase Return</field>
+        <field name="model">report.ibos_purchase_management.purchase_report_return_details</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ibos_purchase_management.purchase_report_return_details</field>
+    </record>
+</odoo>

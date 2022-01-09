@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="contact_form_path" inherit_id="website.snippets" name="Contact Form">
+        <xpath expr="//div[@id='snippet_structure']/div[hasclass('o_panel_body')]" position="inside">
+            <t t-snippet="ibos_theme.contact_form"/>
+        </xpath>
+    </template>
+
+    <template id="contact_form" name="Contact Form">
+        <!-- section insta starts here -->
+        <section class="contact-form" id="contact-form">
+            <div class="container">
+                <div class="service-heading text-center">
+                    <h2 class="heading">We are just one click away.</h2>
+                    <p class="sub-heading">Drop us a message and we'll be in touch as soon as possible.</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-12 col-lg-10">
+                        <form action="" method="post" class="container" enctype="multipart/form-data"
+                              data-editable-form="false">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group form-field mb-4 o_website_form_required_custom">
+                                        <label for="contact_name">
+                                            <h6>Full name</h6>
+                                        </label>
+                                        <input type="text" class="form-control form-control " name="contact_name"
+                                               placeholder="Full name" required=""/>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group form-field mb-4 o_website_form_required_custom">
+                                        <label for="phone">
+                                            <h6>Phone</h6>
+                                        </label>
+                                        <input type="text" class="form-control form-control " name="phone"
+                                               placeholder="Phone"/>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group form-field mb-4 o_website_form_required_custom">
+                                        <label for="email_from">
+                                            <h6>Email</h6>
+                                        </label>
+                                        <input type="email" class="form-control form-control " name="email_from"
+                                               placeholder="Email" required=""/>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group form-field mb-4 o_website_form_required_custom">
+                                        <label for="partner_name">
+                                            <h6>Your company</h6>
+                                        </label>
+                                        <input type="text" class="form-control form-control " name="partner_name"
+                                               placeholder="Your company" required=""/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group form-field mb-4 o_website_form_required_custom">
+                                        <label for="name">
+                                            <h6>Subject</h6>
+                                        </label>
+                                        <input type="text" class="form-control form-control " name="name"
+                                               placeholder="Subject" required=""/>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group form-field mb-7 mb-md-9 o_website_form_required_custom">
+                                        <label for="description">
+                                            <h6>What can we help you with?</h6>
+                                        </label>
+                                        <textarea class="form-control form-control " name="description" rows="5"
+                                                  placeholder="Tell us what we can help you with!"
+                                                  required=""></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center mt-3">
+                                <div class="col-12 text-center">
+                                    <a href="#" role="button" class="btn btn-primary o_website_form_send">
+                                        Send your message
+                                        <span class="b-icon">
+                                            <i class="fa fa-arrow-right" aria-hidden="true" style=""></i>
+                                        </span>
+                                    </a>
+                                    <div class="mt-3">
+                                        <span id="o_website_form_result"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section insta ends here -->
+    </template>
+</odoo>

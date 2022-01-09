@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="paperfor_pos_sales_report" model="report.paperformat">
+        <field name="name">POS: Sales Report</field>
+        <field name="default" eval="True"/>
+        <field name="format">custom</field>
+        <field name="page_height">190</field>
+        <field name="page_width">78</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">0</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">1</field>
+        <field name="margin_right">0</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="pos_sale_details_report" model="ir.actions.report">
+        <field name="name">Sales Order Details</field>
+        <field name="model">report.ibos_pos_sales_report.pos_report_saledetails</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ibos_pos_sales_report.pos_report_saledetails</field>
+        <field name="paperformat_id" ref="ibos_pos_sales_report.paperfor_pos_sales_report"/>
+    </record>
+</odoo>

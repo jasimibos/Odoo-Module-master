@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="our_team_path" inherit_id="website.snippets" name="Our Team">
+        <xpath expr="//div[@id='snippet_structure']/div[hasclass('o_panel_body')]" position="inside">
+            <t t-snippet="ibos_theme.our_team"/>
+        </xpath>
+    </template>
+
+    <template id="our_team" name="Our Team">
+        <!-- section insta starts here -->
+        <section class="team-member h">
+            <div class="container">
+                <div class="heading text-center">
+                    <h2>Meet Our Key Team Members</h2>
+                    <p>We believe in a team that can carry a big punch. As our happy clients already know, our team is
+                        capable of delivering big results. we are a talented and dedicated team focused on delivering a
+                        real result for our clients.
+                    </p>
+                </div>
+                <div class="team-card">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-team-card shadow">
+                                <div class="card " style="width: 100%;">
+                                    <div class="card-body text-center ">
+                                        <img class="mb-3 mt-2" src="/ibos_theme/static/src/images/about/tazbin.jpg" alt=""/>
+                                        <h5 class="card-title">Parth Gajjar</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">Founder, MD</h6>
+                                        <p class="card-text">Parth Gajjar is working with Odoo since version 6. He
+                                            worked in Odoo's R&amp;D department for 7 years and developed several key
+                                            features. He also authored Odoo 12 development cookbook and Odoo 14
+                                            development cookbook. He loves to imagine new things in odoo and bring them
+                                            to reality.
+                                        </p>
+                                        <div class="social-link">
+                                            <a href="#" class="card-link">
+                                                <i class="fa fa-facebook"  ></i>
+                                            </a>
+                                            <a href="#" class="card-link">
+                                                <i class="fa fa-twitter"  ></i>
+                                            </a>
+                                            <a href="#" class="card-link">
+                                                <i class="fa fa-github"  ></i>
+                                            </a>
+                                            <a href="#" class="card-link">
+                                                <i class="fa fa-linkedin"  ></i>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-team-card shadow">
+                                <div class="card " style="width: 100%;">
+                                    <div class="card-body text-center ">
+                                        <img class="mb-3 mt-2" src="/ibos_theme/static/src/images/about/tazbin.jpg" alt=""/>
+                                        <h5 class="card-title">Parth Gajjar</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">Founder, MD</h6>
+                                        <p class="card-text">Parth Gajjar is working with Odoo since version 6. He
+                                            worked in Odoo's RD department for 7 years and developed several key
+                                            features. He also authored Odoo 12 development cookbook and Odoo 14
+                                            development cookbook. He loves to imagine new things in odoo and bring them
+                                            to reality.
+                                        </p>
+                                        <div class="social-link">
+                                            <a href="#" class="card-link">
+                                                <i class="fa fa-facebook"  ></i>
+                                            </a>
+                                            <a href="#" class="card-link">
+                                                <i class="fa fa-twitter"  ></i>
+                                            </a>
+                                            <a href="#" class="card-link">
+                                                <i class="fa fa-github"  ></i>
+                                            </a>
+                                            <a href="#" class="card-link">
+                                                <i class="fa fa-linkedin"  ></i>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-team-card shadow">
+                                <div class="card " style="width: 100%;">
+                                    <div class="card-body text-center ">
+                                        <img class="mb-3 mt-2" src="/ibos_theme/static/src/images/about/tazbin.jpg" alt=""/>
+                                        <h5 class="card-title">Parth Gajjar</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">Founder, MD</h6>
+                                        <p class="card-text">Parth Gajjar is working with Odoo since version 6. He
+                                            worked in Odoo's RD department for 7 years and developed several key
+                                            features. He also authored Odoo 12 development cookbook and Odoo 14
+                                            development cookbook. He loves to imagine new things in odoo and bring them
+                                            to reality.
+                                        </p>
+                                        <div class="social-link">
+                                            <a href="#" class="card-link">
+                                                <i class="fa fa-facebook"  ></i>
+                                            </a>
+                                            <a href="#" class="card-link">
+                                                <i class="fa fa-twitter"  ></i>
+                                            </a>
+                                            <a href="#" class="card-link">
+                                                <i class="fa fa-github"  ></i>
+                                            </a>
+                                            <a href="#" class="card-link">
+                                                <i class="fa fa-linkedin"  ></i>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section insta ends here -->
+    </template>
+</odoo>

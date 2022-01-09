@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--    # Accounting Bank Book Report    -->
+    <report
+            id="action_report_scrap_product"
+            model="stock.scrap.product.wizard"
+            string="Stock Product Scrap Report"
+            print_report_name="Stock Product Scrap Report"
+            report_type="qweb-pdf"
+            name="ibos_scrap_product_report.report_stock_product_scrap"
+            file="ibos_scrap_product_report.report_stock_product_scrap"
+            attachment_use="False"
+    />
+</odoo>

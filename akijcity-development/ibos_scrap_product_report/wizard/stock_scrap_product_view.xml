@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="stock_scrap_product_wizard_view" model="ir.ui.view">
+        <field name="name">Scrap Products</field>
+        <field name="model">stock.scrap.product.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Report Options">
+                <group col="4">
+                    <field name="date_from"/>
+                    <field name="location_ids" options="{'no_create': True}" widget="many2many_tags"/>
+                    <newline/>
+                    <field name="date_to"/>
+                    <field name="sortby" widget="radio"/>
+                </group>
+                <footer>
+                    <button name="print_scrap_product_report" string="Print" type="object" default_focus="1" class="oe_highlight"/>
+                    <button string="Cancel" class="btn btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_scrap_product_wizard_view" model="ir.actions.act_window">
+        <field name="name">Scrap Products Report</field>
+        <field name="res_model">stock.scrap.product.wizard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="stock_scrap_product_wizard_view"/>
+        <field name="context">{}</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_scrap_product_report" name="Scrap Product Report" sequence="2" action="action_scrap_product_wizard_view" parent="stock.menu_warehouse_report"/>
+</odoo>

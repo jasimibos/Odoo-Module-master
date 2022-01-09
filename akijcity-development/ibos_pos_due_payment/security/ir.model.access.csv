@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_customer_credit_deduction,access.customer.credit.deduction,model_customer_credit_deduction,base.group_user,1,1,1,0
+access_credit_deduction_line,due_payment.customer.credit.deduction.line,model_customer_credit_deduction_line,base.group_user,1,1,1,1
+access_customer_credit_payment_line,access.customer.credit.payment.line,model_customer_credit_payment_line,base.group_user,1,1,1,0

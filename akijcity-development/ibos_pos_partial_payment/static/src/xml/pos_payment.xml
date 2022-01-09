@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<template id="template" xml:space="preserve">
+    <t t-extend="PaymentScreenWidget">
+        <t t-jquery=".next" t-operation="before">
+            <t t-if="widget.pos.config.partial_payment">
+                <span class='button partial-payment'>
+                    Credit
+                    <i class='fa fa-angle-double-right'></i>
+                </span>
+            </t>
+        </t>
+    </t>
+</template>

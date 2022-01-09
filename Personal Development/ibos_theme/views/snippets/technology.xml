@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="technology_support_path" inherit_id="website.snippets" name="Technology Support ">
+        <xpath expr="//div[@id='snippet_structure']/div[hasclass('o_panel_body')]" position="inside">
+            <t t-snippet="ibos_theme.technology_support"/>
+        </xpath>
+    </template>
+
+    <template id="technology_support" name="Technology Support">
+        <!-- section insta starts here -->
+        <section class="technology bg-grey py-5">
+            <div class="container">
+                <div class="technology-we-used">
+                    <div class="row">
+                        <div class="col-lg-3 offset-lg-1 pt-3">
+                            <h4>Weapons we use</h4>
+                        </div>
+                        <div class="col-3 col-lg-1 pt-3">
+                            <img src="/ibos_theme/static/src/images/about/iconfinder_267_Python_logo_4375050 (1).png"
+                                 class="img img-fluid" alt="Demo Logo" data-original-title="" title=""
+                                 aria-describedby="tooltip991388"/>
+                        </div>
+                        <div class="col-3 col-lg-1 pt-3">
+                            <img src="/ibos_theme/static/src/images/about/ezgif-5-b1927562e24b.png" class="img img-fluid" alt="Demo Logo"
+                                 data-original-title="" title="" aria-describedby="tooltip991388"/>
+                        </div>
+                        <div class="col-3 col-lg-1 pt-3">
+                            <img src="/ibos_theme/static/src/images/about/iconfinder_187_Js_logo_logos_4373213.png" class="img img-fluid"
+                                 alt="Demo Logo" data-original-title="" title="" aria-describedby="tooltip991388"/>
+                        </div>
+                        <div class="col-3 col-lg-1 pt-3">
+                            <img src="/ibos_theme/static/src/images/about/iconfinder_288_Sass_logo_4375066.png" class="img img-fluid"
+                                 alt="Demo Logo" data-original-title="" title="" aria-describedby="tooltip991388"/>
+                        </div>
+                        <div class="col-3 col-lg-1 pt-3">
+                            <img src="/ibos_theme/static/src/images/about/iconfinder_198_Less_logo_logos_4373202.png"
+                                 class="img img-fluid" alt="Demo Logo" data-original-title="" title=""
+                                 aria-describedby="tooltip991388"/>
+                        </div>
+                        <div class="col-3 col-lg-1 pt-3">
+                            <img src="/ibos_theme/static/src/images/about/iconfinder_css3_294692.png" class="img img-fluid"
+                                 alt="Demo Logo" data-original-title="" title="" aria-describedby="tooltip991388"/>
+                        </div>
+                        <div class="col-3 col-lg-1 pt-3">
+                            <img src="/ibos_theme/static/src/images/about/iconfinder_HTML_Logo_65687.png" class="img img-fluid"
+                                 alt="Demo Logo" data-original-title="" title="" aria-describedby="tooltip991388"/>
+                        </div>
+                        <div class="col-lg-3 offset-lg-1 pt-3">
+                        </div>
+                        <div class="col-3 col-lg-1 pt-3">
+                            <img src="/ibos_theme/static/src/images/about/bootstrap-stack-490x412.png" class="img img-fluid"
+                                 alt="Demo Logo" data-original-title="" title="" aria-describedby="tooltip991388"/>
+                        </div>
+                        <div class="col-3 col-lg-1 pt-3">
+                            <img src="/ibos_theme/static/src/images/about/output-onlinepngtools (3).png" class="img img-fluid"
+                                 alt="Demo Logo" data-original-title="" title="" aria-describedby="tooltip991388"/>
+                        </div>
+                        <div class="col-3 col-lg-1 pt-3">
+                            <img src="/ibos_theme/static/src/images/about/output-onlinepngtools (5).png" class="img img-fluid"
+                                 alt="Demo Logo" data-original-title="" title="" aria-describedby="tooltip991388"/>
+                        </div>
+                        <div class="col-3 col-lg-1 pt-3">
+                            <img src="/ibos_theme/static/src/images/about/atom-logo-19BD90FF87-seeklogo.com.png" class="img img-fluid"
+                                 alt="Demo Logo" data-original-title="" title="" aria-describedby="tooltip991388"/>
+                        </div>
+                        <div class="col-3 col-lg-1 pt-3">
+                            <img src="/ibos_theme/static/src/images/about/iconfinder_HTML_Logo_65687.png" class="img img-fluid"
+                                 alt="Demo Logo" data-original-title="" title="" aria-describedby="tooltip991388"/>
+                        </div>
+                        <div class="col-3 col-lg-1 pt-3">
+                            <img src="/ibos_theme/static/src/images/about/output-onlinepngtools (2).png" class="img img-fluid"
+                                 alt="Demo Logo" data-original-title="" title="" aria-describedby="tooltip991388"/>
+                        </div>
+                        <div class="col-3 col-lg-1 pt-3">
+                            <img src="/ibos_theme/static/src/images/about/iconfinder_272_Raspberry_Pi_logo_4375054.png"
+                                 class="img img-fluid" alt="Demo Logo" data-original-title="" title=""
+                                 aria-describedby="tooltip991388"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section insta ends here -->
+    </template>
+</odoo>

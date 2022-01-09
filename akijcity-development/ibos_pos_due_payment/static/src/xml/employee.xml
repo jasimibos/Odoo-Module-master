@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<template id="template" xml:space="preserve">
+    <t t-extend="ClientDetails">
+        <t t-jquery=".client-details-right" t-operation="append">
+            <div class='client-detail'>
+                <span class='label'>Credit Limit</span>
+                <t t-if='partner.credit_limit'>
+                    <span class='detail vat'><t t-esc='partner.credit_limit'/></span>
+                </t>
+                <t t-if='!partner.credit_limit'>
+                    <span class='detail vat empty'>N/A</span>
+                </t>
+            </div>
+        </t>
+    </t>
+</template>

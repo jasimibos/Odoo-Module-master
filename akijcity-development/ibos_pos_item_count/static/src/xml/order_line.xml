@@ -1,0 +1,7 @@
+<templates id="template" xml:space="preserve">
+    <t t-extend="OrderWidget">
+        <t t-jquery=".order" t-operation="append">
+            <span t-attf-class="item-count"></span>
+        </t>
+    </t>
+</templates>

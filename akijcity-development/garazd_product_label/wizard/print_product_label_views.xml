@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <!-- <act_window
+        id="action_print_label_from_template"
+        name="Custom Product Labels"
+        binding_model="product.template"
+        res_model="print.product.label"
+        view_mode="form"
+        target="current"
+        binding_views="form"
+        context="{'default_product_ids': active_ids}"/> -->
+
+    <record id="print_product_label_view_form" model="ir.ui.view">
+        <field name="name">print.product.label.view.form</field>
+        <field name="model">print.product.label</field>
+        <field name="arch" type="xml">
+            <form create="false" string="Print Product Labels">
+                <header>
+                    <button name="action_print" string="Print"
+                        help="Print product labels"
+                        type="object" icon="fa-print"
+                        class="btn-primary mt8 mb8"/>
+                </header>
+                <div class="alert alert-info text-center mb-3"
+                     attrs="{'invisible':[('message', '=', False)]}"
+                     role="alert">
+                    <field name="message"/>
+                </div>
+                <group name="settings">
+                    <group name="global">
+                        <field name="output" widget="radio" options="{'horizontal': true}"/>
+                    </group>
+                    <group name="pdf" attrs="{'invisible':[('output', '!=', 'pdf')]}">
+                        <field name="template" string="Label template" widget="radio"/>
+                    </group>
+                </group>
+                <div>
+                    <field name="qty_per_product" class="oe_left mr8"
+                        help="Label quantity per product"
+                        style="width: 40px !important; text-align: right;"/>
+                    <button name="action_set_qty" string="Set quantity"
+                        help="Set a certain quantity for each line."
+                        type="object" class="btn-xs mr8 mb4"/>
+                    <button name="action_restore_initial_qty" string=""
+                        help="Restore initial quantity."
+                        icon="fa-undo" type="object" class="btn-xs mr8 mb4"/>
+                </div>
+                <field name="label_ids" mode="tree">
+                    <tree editable="top" decoration-success="qty &gt; 0">
+                        <field name="selected"/>
+                        <field name="product_id"/>
+                        <field name="barcode" readonly="True"/>
+                        <button name="action_minus_qty" type="object" string="" icon="fa-minus"/>
+                        <field name="qty" sum="Total" />
+                        <button name="action_plus_qty" type="object" string="" icon="fa-plus"/>
+                    </tree>
+                </field>
+            </form>
+        </field>
+    </record>
+
+    <act_window id="action_print_label_from_template"
+        name="Akij City Barcode Print"
+        res_model="print.product.label"
+        binding_model="product.template"
+  		view_mode="form"
+        binding_type="report"
+        target="current"
+        context="{'default_product_ids': active_ids}"/>
+
+    <act_window id="action_print_label_from_product"
+        name="Akij City Barcode Print"
+        binding_model="product.product"
+        res_model="print.product.label"
+        view_mode="form"
+        binding_type="report"
+        target="current"
+        context="{'default_product_ids': active_ids}"/>
+
+</odoo>

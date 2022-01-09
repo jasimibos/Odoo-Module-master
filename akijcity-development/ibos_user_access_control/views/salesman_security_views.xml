@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="point_of_sale.menu_point_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4,ref('branch_customized.group_branch_user_salesman'))]"/>
+    </record>
+
+    <record id="point_of_sale.menu_point_ofsale" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4,ref('branch_customized.group_branch_user_salesman'))]"/>
+    </record>
+
+    <record id="point_of_sale.menu_point_rep" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4,ref('branch_customized.group_branch_user_salesman'))]"/>
+    </record>
+
+</odoo>

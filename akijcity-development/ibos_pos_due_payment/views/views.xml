@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="Pos_due_payment" inherit_id="point_of_sale.assets">
+            <xpath expr="." position="inside">
+                <!--JS file-->
+                <script type="text/javascript" src="/ibos_pos_due_payment/static/src/js/action_button.js"/>
+                <!--CSS-->
+                <link rel="stylesheet" href="/ibos_pos_due_payment/static/src/css/due_payment.css" />
+            </xpath>
+        </template>
+    </data>
+</odoo>

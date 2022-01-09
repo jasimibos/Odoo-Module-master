@@ -1,0 +1,61 @@
+<odoo>
+
+    <template id="custom_message" inherit_id="website.layout" name="Hero Header">
+        <!-- Add an element after the top menu  -->
+        <xpath expr="//div[@id='wrapwrap']/main" position="inside">
+            <div class="container" id="hero">
+                <section class="hero-section">
+                    <div class="container">
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col-lg-5 col-sm-12 col-md-6">
+                                <div class="hero-content">
+                                    <!-- alart -->
+                                    <div class="hero-alert alert alert-modern alert-primary d-none d-sm-inline-block">
+                                        <span class="badge badge-pill badge-primary">New</span>
+                                        <font class="text-white">Explore powerful eCommerce
+                                            <a href="#"
+                                               class="alert-link text-white primary-text"
+                                               target="new">
+                                                Theme Prime
+                                                <small class="fa fa-external-link"></small>
+                                            </a>
+                                        </font>
+                                        <font class="text-primary"></font>
+                                    </div>
+                                    <h1 id="hero">
+                                        <span>One-stop</span>
+                                        destination for all your business needs.
+                                    </h1>
+                                    <p>We provide powerful and flexible Odoo solutions that help you transform your
+                                        vision into
+                                        reality.
+                                    </p>
+                                    <div class="hero-btn">
+                                        <a href="#" class="btn btn-primary">
+                                            <span>Our Services</span>
+                                        </a>
+                                        <a href="#" class="btn btn-dark">
+                                            <span>Contact Us</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-7 col-sm-12 col-md-6">
+                                <div class="hero-image">
+                                    <img class="img img-fluid" src="/ibos_theme/static/src/images/Hero/hero.svg"
+                                         alt=""/>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+        </xpath>
+    </template>
+
+
+</odoo>

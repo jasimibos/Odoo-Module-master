@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="res_partner_approve" model="ir.ui.view">
+            <field name="name">res.partner.approve</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="before">
+                    <header>
+                        <button string="Submit to Manager" name="action_partner_submit_to" states="draft" type='object'/>
+                        <button string="Approve" name="action_partner_approve" type="object" states="submit" class="oe_highlight" groups="ibos_partner_approval.group_partner_approval,base.group_erp_manager"/>
+                        <button string="Refuse" name="action_partner_refuse" states="submit" type='object' groups="ibos_partner_approval.group_partner_approval,base.group_erp_manager"/>
+                        <button string="Set to Draft" name="action_partner_draft" type="object" states="approve,refuse"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,approved"/>
+                    </header>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="res_partner_approval_view_search" model="ir.ui.view">
+            <field name="name">res.partner.search.approval.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='inactive']" position="before">
+                   <filter string="Draft" name="state" domain="[('state','=', 'draft')]"/>
+                   <filter string="To Approve" name="state" domain="[('state','=', 'submit')]"/>
+                   <filter string="Approved" name="state" domain="[('state','=', 'approved')]"/>
+                   <filter string="Refused" name="state" domain="[('state','=', 'refused')]"/>
+                   <separator/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

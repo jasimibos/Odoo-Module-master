@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+	<data>
+
+		<template id="payment_voucher_template_report_view">
+            <t t-call="web.html_container">
+                <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
+                <div class="page">
+                    <style>
+                        .table th, .table-bordered td {
+                                border: 1px solid #dee2e6;
+                            }
+
+                        .table th, .table td {
+                            padding: 0.75rem;
+                            vertical-align: top;
+                            border-top: 1px solid #dee2e6;
+                        }
+                    </style>
+                    <t t-foreach="range(2)" t-as="item">
+                        <div class="text-center">
+                            <p style="text-align:center;margin:2px;"><span t-field="o.company_id.name"/></p>
+                            <p style="text-align:center;margin:2px;"><span t-field="o.company_id.street"/></p>
+                            <p style="text-align:center;margin:2px;"><b><span t-field="o.journal_id"/> Journal</b></p>
+                            <p style="text-align:center;margin:2px;"><t t-if="o.bank_name">Bank Name: <b><t t-esc="o.get_string_value_of_selection(o.bank_name)"/></b>  A/C Number: <b><t t-esc="o.bank_reference"/></b> </t></p>
+                        </div>
+                        <div class="oe_structure"/>
+
+                        <br/>
+                        <div class="row" id="journal_information">
+                            <div class="col-12">
+                                <div>
+                                    <strong>Voucher No :</strong>
+                                    <span t-field="o.name"/>
+                                </div>
+                                <div class="text-left">
+                                    <strong>Voucher Date :</strong>
+                                    <span t-field="o.payment_date"/>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <br/>
+                        <table style="border-collapse: collapse;width: 100%;" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="text-align:left;">SL</th>
+                                    <th style="text-align:left;">Account</th>
+                                    <th style="text-align:left;">Debit</th>
+                                    <th style="text-align:left;">Credit</th>
+                                </tr>
+                            </thead>
+                            <tbody class="consumed_tbody">
+                                <t t-set="total" t-value="0.0"/>
+                                <t t-set="total1" t-value="0.0"/>
+                                <t t-set="i" t-value="1"/>
+                                <t t-foreach="o.move_line_ids" t-as="line">
+                                    <tr>
+                                        <td>
+                                            <span t-esc="i"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="line.account_id" />
+                                        </td>
+                                        <td>
+                                            <span t-esc="line.debit"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="line.credit" />
+                                        </td>
+                                    </tr>
+                                    <t t-set="total" t-value="total + line.debit"/>
+                                    <t t-set="total1" t-value="total1 + line.credit"/>
+                                    <t t-set="i" t-value="i+1"/>
+                                </t>
+                                <tr>
+                                    <td></td>
+                                    <td><strong>Total:</strong></td>
+                                    <td width="10%"><strong>
+                                        <span><t t-esc="total"/></span>
+                                    </strong></td>
+                                     <td width="10%"><strong>
+                                        <span><t t-esc="total1"/></span>
+                                    </strong></td>
+                              </tr>
+                            </tbody>
+                        </table>
+
+                        <div style="padding-top:20px;">
+                            Sum Of Taka: <span><t t-esc="o.currency_id.amount_to_text(total)"/></span>
+                        </div>
+
+                       <div style="padding-top:80px;"/>
+
+                        <div class="row mt32 mb32">
+                            <div style="width:20%;float:left;text-align:center;border-top:1px dotted #000;margin:0px 10px;padding:5px;">
+                                <span style="padding:5px;">Prepared By</span>
+                            </div>
+                            <div style="width:20%;float:left;text-align:center;border-top:1px dotted #000;margin:0px 10px;padding:5px;">
+                                <span>Reviewed By</span>
+                            </div>
+                            <div style="width:20%;float:left;text-align:center;border-top:1px dotted #000;margin:0px 10px;padding:5px;">
+                                <span>Authorized By</span>
+                            </div>
+                            <div style="width:20%;float:left;text-align:center;border-top:1px dotted #000;margin:0px 10px;padding:5px;">
+                                <span>Payee</span>
+                            </div>
+                        </div>
+                        <t t-if="item == 0">
+                            <div style="padding-top:250px;"/>
+                        </t>
+
+                    </t>
+                </div>
+            </t>
+		</template>
+
+		<template id="payment_voucher_entry_report_template">
+			<t t-call="web.html_container">
+				<t t-foreach="docs" t-as="o">
+					<t t-call="ibos_print_journal_voucher.payment_voucher_template_report_view"  t-lang="o.partner_id.lang"/>
+				</t>
+			</t>
+		</template>
+
+	</data>
+</odoo>

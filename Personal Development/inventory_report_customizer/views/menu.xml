@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <menuitem id="menu_valuation" name="Inventory Transaction And Movement" parent="stock.menu_warehouse_report"
+                  sequence="112"
+                  action="action_report_customer_sales"/>
+    </data>
+</odoo>

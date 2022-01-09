@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pos_loyalty_promotional_schemes_user,loyalty.promotional.schemes user,model_loyalty_promotional_schemes,point_of_sale.group_pos_user,1,0,0,0
+access_pos_loyalty_promotional_schemes_manager,loyalty.promotional.schemes manager,model_loyalty_promotional_schemes,point_of_sale.group_pos_manager,1,1,1,1
+access_pos_loyalty_available_on_user,loyalty.available.on user,model_loyalty_available_on,point_of_sale.group_pos_user,1,0,0,0
+access_pos_loyalty_available_on_manager,loyalty.available.on manager,model_loyalty_available_on,point_of_sale.group_pos_manager,1,1,1,1
+access_pos_loyalty_qty_disc_user,loyalty.qty.disc user,model_loyalty_qty_disc,point_of_sale.group_pos_user,1,0,0,0
+access_pos_loyalty_qty_disc_manager,loyalty.qty.disc manager,model_loyalty_qty_disc,point_of_sale.group_pos_manager,1,1,1,1

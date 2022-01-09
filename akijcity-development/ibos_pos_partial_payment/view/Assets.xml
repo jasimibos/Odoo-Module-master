@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="assets_backend" name="pos assets" inherit_id="point_of_sale.assets">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/ibos_pos_partial_payment/static/src/js/screen.js"/>
+            <script type="text/javascript" src="/ibos_pos_partial_payment/static/src/js/credit.js"/>
+            <script type="text/javascript" src="/ibos_pos_partial_payment/static/src/js/models.js"/>
+        </xpath>
+        <xpath expr="//link[@id='pos-stylesheet']" position="after">
+            <link rel="stylesheet" href="/ibos_pos_partial_payment/static/src/css/pos_partial_payment.css"/>
+        </xpath>
+    </template>
+</odoo>

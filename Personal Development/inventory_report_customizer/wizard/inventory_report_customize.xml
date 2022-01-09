@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_pos_sales_details_wizard" model="ir.ui.view">
+        <field name="name">inventory.report.customize.form</field>
+        <field name="model">inventory.report.customize</field>
+        <field name="arch" type="xml">
+            <form string="Customer Sales Report">
+                <group>
+                    <field name="from_date"/>
+                    <field name="to_date"/>
+                </group>
+                <group>
+                    <field name="state"/>
+                </group>
+                <footer>
+                    <button name="get_report_values" string="Confirm" type="object" class="btn-primary"
+                            data-hotkey="q"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                </footer>
+
+            </form>
+        </field>
+    </record>
+
+    <record id="action_report_customer_sales" model="ir.actions.act_window">
+        <field name="name">Report By inventory Transaction And Movement</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">inventory.report.customize</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_pos_sales_details_wizard"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

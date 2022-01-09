@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_credit_return" model="ir.actions.act_window">
+        <field name="name">Credit Sales</field>
+        <field name="res_model">pos.credit.sale.details.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+    <menuitem id="credit_sales_report" name="Credit Sales" action="action_credit_return" parent="point_of_sale.menu_point_rep" sequence="6" groups="base.group_user"/>
+</odoo>

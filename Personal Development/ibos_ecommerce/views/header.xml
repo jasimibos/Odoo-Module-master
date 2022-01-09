@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template priority="100" id="new_header" inherit_id="website.layout">
+        <xpath expr="//header" position="replace">
+            <!-- ============Start Header Area========== -->
+            <div id="wpf-loader-two">
+                <div class="wpf-loader-two-inner">
+                    <span>Loading</span>
+                </div>
+            </div>
+            <!-- / wpf loader Two -->
+            <!-- SCROLL TOP BUTTON -->
+            <a class="scrollToTop" href="#">
+                <i class="fa fa-chevron-up"></i>
+            </a>
+            <!-- END SCROLL TOP BUTTON -->
+
+
+            <!-- Start header section -->
+            <header id="aa-header">
+                <!-- start header top  -->
+                <div class="aa-header-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="aa-header-top-area">
+                                    <!-- start header top left -->
+                                    <div class="aa-header-top-left">
+                                        <!-- start language -->
+
+
+                                        <!-- / cellphone -->
+                                    </div>
+                                    <!-- / header top left -->
+                                    <div class="aa-header-top-right">
+                                        <ul style="list-style-type: none">
+                                            <!-- Sign In -->
+                                            <t t-call="portal.placeholder_user_sign_in">
+                                                <t t-set="_item_class" t-value="'nav-item ml-lg-auto'"/>
+                                                <t t-set="_link_class" t-value="'nav-link'"/>
+                                            </t>
+                                            <!-- User Dropdown -->
+                                            <t t-call="portal.user_dropdown">
+                                                <t t-set="_user_name" t-value="True"/>
+                                                <t t-set="_item_class" t-value="'nav-item dropdown ml-lg-auto'"/>
+                                                <t t-set="_link_class" t-value="'nav-link'"/>
+                                            </t>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- / header top  -->
+
+                <!-- start header bottom  -->
+                <div class="aa-header-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="aa-header-bottom-area">
+                                    <!-- logo  -->
+                                    <div class="aa-logo">
+                                        <!-- Text based logo -->
+                                        <a href="index.html">
+
+                                            <t t-call="website.placeholder_header_brand"/>
+
+                                        </a>
+
+
+                                    </div>
+                                    <!-- / logo  -->
+                                    <!-- cart box -->
+
+                                    <t t-set="website_sale_order" t-value="website.sale_get_order()"/>
+                                    <t t-set="show_cart" t-value="true"/>
+                                    <li t-attf-class="nav-item} divider d-none"/> <!-- Make sure the cart and related menus are not folded (see autohideMenu) -->
+
+                                    <div class="aa-cartbox">
+                                        <ul style="list-style-type: none">
+                                            <t t-set="website_sale_order" t-value="website.sale_get_order()"/>
+                                            <t t-set="show_cart" t-value="true"/>
+                                            <li t-attf-class="nav-item} divider d-none"/> <!-- Make sure the cart and related menus are not folded (see autohideMenu) -->
+                                            <li t-attf-class="o_wsale_my_cart #{not show_cart and 'd-none'} nav-item">
+                                                <a href="/shop/cart" t-attf-class="nav-link">
+                                                    <span class="fa fa-shopping-basket"></span>
+                                                    <span t-if="_text">My Cart</span>
+
+                                                    <sup class="my_cart_quantity badge badge-primary"
+                                                         t-esc="website_sale_order and website_sale_order.cart_quantity or '0'"
+                                                         t-att-data-order-id="website_sale_order and website_sale_order.id or ''"/>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- / cart box -->
+                                    <!-- search box -->
+                                    <div class="aa-search-box">
+
+                                    </div>
+                                    <!-- / search box -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- / header bottom  -->
+            </header>
+            <!-- / header section -->
+            <!-- menu -->
+            <section id="menu">
+                <div class="container">
+                    <div class="menu-area">
+                        <!-- Navbar -->
+                        <div class="navbar navbar-default" role="navigation">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                        data-target=".navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="navbar-collapse collapse">
+                                <!-- Left nav -->
+                                <ul class="nav navbar-nav">
+                                    <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                                        <t t-call="website.submenu">
+                                            <t t-set="item_class" t-value="'nav-item'"/>
+                                            <t t-set="link_class" t-value="'nav-link'"/>
+                                        </t>
+                                    </t>
+                                </ul>
+                            </div><!--/.nav-collapse -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- / menu -->
+            <!-- ============End Header Area========== -->
+
+          
+
+        </xpath>
+
+    </template>
+</odoo>

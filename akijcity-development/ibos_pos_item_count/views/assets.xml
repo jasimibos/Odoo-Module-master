@@ -1,0 +1,19 @@
+<odoo>
+    <template id="assets" inherit_id="point_of_sale.assets">
+        <xpath expr="." position="inside">
+            <link
+                rel="stylesheet"
+                type="text/scss"
+                href="/ibos_pos_item_count/static/src/css/order_line.scss"
+            />
+            <script
+                type="text/javascript"
+                src="/ibos_pos_item_count/static/src/js/order_line.js"
+            />
+            <script
+                type="text/javascript"
+                src="/ibos_pos_item_count/static/src/js/screen.js"
+            />
+        </xpath>
+    </template>
+</odoo>

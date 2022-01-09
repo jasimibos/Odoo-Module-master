@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" inhreit_id="point_od_sal.assert " xml:space="preserve">
+    <!-- Home page due payment button-->
+    <t t-name="duePayment">
+        <div class='control-button'>
+            <i class="fa fa-money" aria-hidden="true"/>
+            Orders
+        </div>
+    </t>
+
+    <t t-name="DueOrderLine">
+        <tr class='order-line' t-att-data-id='order.id'>
+                <td><t t-esc='order.pos_reference' /></td>
+                <td><t t-esc='customer' /></td>
+                <td><t t-esc='order.amount_total.toFixed(2)' /></td>
+                <td><t t-esc="due"/></td>
+                <td><t t-esc='order.date_order' /></td>
+                <td><span class="Payment-button payment_order">Payment</span><span class="return-button return_order">Return</span></td>
+        </tr>
+    </t>
+
+    <t t-name="listOfAllDueOrderWidget">
+        <div class="Due-Payment-screen screen">
+            <div class="screen-content">
+
+                <section class="top-content">
+                    <span class='button back'>
+                        <i class='fa fa-angle-double-left'></i>
+                        Cancel
+                    </span>
+
+                    <span class='searchbox'>
+                        <input placeholder='Search'/>
+                        <span class='search-clear'></span>
+                    </span>
+                    <span class='searchbox'></span>
+
+                    <span class='button refresh refreshbutton_due'>
+                        <i class="fa fa-refresh"></i>
+                        Refresh
+                    </span>
+
+                </section>
+
+                <section class="full-content">
+                    <div class='window'>
+                        <section class='subwindow'>
+                            <div class='subwindow-container'>
+                                <div class='subwindow-container-fix touch-scrollable scrollable-y'>
+                                    <table class='order-list_'>
+                                        <thead>
+                                            <tr>
+                                                <th>Order No</th>
+                                                <th>Customer Name</th>
+                                                <th>Total amount</th>
+                                                <th>Due amount</th>
+                                                <th>Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class='order-list-tbody'>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="DuePaymentWidget">
+        <div class="modal-dialog" role="dialog">
+            <div class="popup popup-selection product_DuePayment_pos">
+                <p class="title">Payment Order</p>
+                <div class='selection scrollable-y touch-scrollable payment_popup_table'>
+                    <table id="Due-list" cellspacing="1px" cellpadding="10px" text-align="center"
+                           width="100%" style="border:1px;padding-left:1.16cm;">
+                        <thead>
+                            <tr>
+                                <td>ID</td>
+                                <td>Total</td>
+                                <td>Paid</td>
+                                <td>Due</td>
+                                <td>Type</td>
+                                <td>Payment</td>
+                            </tr>
+                        </thead>
+                        <tbody id="Due-table-body">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="footer">
+                    <div class="button payment">
+                            Pay
+                        </div>
+                    <div class="button quite">
+                        Cancel
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="ReturnWidget">
+        <div class="modal-dialog" role="dialog">
+            <div class="popup popup-selection product_return_pos">
+                <p class="title">Return Order</p>
+                <div class='selection scrollable-y touch-scrollable'>
+                    <table id="list" cellspacing="1px" cellpadding="10px" text-align="center"
+                           width="100%" style="border:1px;padding-left:1.16cm;">
+                        <thead>
+                            <tr>
+                                <td>ID</td>
+                                <td>Price</td>
+                                <td>Name</td>
+                                <td>Qty</td>
+                                <td>Dis</td>
+                                <td>Line ID</td>
+                                <td>Returned Quantity</td>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="footer">
+                    <div class="button confirm">
+                            Return
+                        </div>
+                    <div class="button cancel">
+                        Cancel
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

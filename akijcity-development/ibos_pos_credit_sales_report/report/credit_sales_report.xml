@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="credit_sale_details_report" model="ir.actions.report">
+        <field name="name">Credit Sales</field>
+        <field name="model">report.ibos_pos_credit_sales_report.credit_sale</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ibos_pos_credit_sales_report.credit_sale</field>
+    </record>
+
+    <record id="credit_sale_report_xlsx" model="ir.actions.report">
+        <field name="name">Credit Sales </field>
+        <field name="model">pos.order</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">ibos_pos_credit_sales_report.credit_sale_xlsx</field>
+        <field name="report_file">ibos_pos_credit_sales_report.credit_sale_xlsx</field>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

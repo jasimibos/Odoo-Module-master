@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="new_internal_layout" inherit_id="web.internal_layout">
+            <xpath expr="//div[hasclass('header')]" position="replace">
+                <div class="header">
+                    <div class="" style="position: relative; display: flex;align-items:center;justify-content: space-between;">
+                        <div class="" style="position: absolute;top: 25px;left: 0;">
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 60px;"
+                                 alt="Logo"/>
+                        </div>
+                        <div></div>
+                        <div class="text-center">
+                            <span t-esc="company.name"/>
+                            <br/>
+                            <p>
+                                <t t-esc="company.street"/>
+                                <t t-esc="company.street2"/>
+                                <t t-esc="company.zip"/>
+                                <t t-esc="company.city"/>
+                                <t t-esc="company.country_id.name"/>
+                            </p>
+                            <p>
+                                <t t-esc="company.phone"/>
+                            </p>
+                            <p>
+                                <t t-esc="company.website"/>
+                            </p>
+
+                        </div>
+                        <div></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 offset-2 text-center">
+
+                        </div>
+                    </div>
+                </div>
+
+            </xpath>
+        </template>
+    </data>
+</odoo>

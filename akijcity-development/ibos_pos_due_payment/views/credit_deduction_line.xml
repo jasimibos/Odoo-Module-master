@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="customer_credit_deduction_line_tree" model="ir.ui.view">
+        <field name="name">customer.credit.deduction.line.tree</field>
+        <field name="model">customer.credit.deduction.line</field>
+        <field name="arch" type="xml">
+            <tree string="Credit Customer" class="credit_cutoff_tree">
+                <field name="partner_id"/>
+                <field name="phone"/>
+                <field name="department_id"/>
+                <field name="limit"/>
+                <field name="credit"/>
+                <field name="remaining"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="customer_credit_deduction_line_view_search" model="ir.ui.view">
+        <field name="name">customer.credit.deduction.line.search</field>
+        <field name="model">customer.credit.deduction.line</field>
+        <field name="arch" type="xml">
+            <search string="Customer Credit">
+                <field name="partner_id"/>
+                <field name="department_id"/>
+                <group col="8" colspan="4" expand="0" string="Group By">
+                    <filter string="Department" name="department_id" context="{'group_by':'department_id'}"/>
+                </group>
+            </search>
+         </field>
+    </record>
+</odoo>

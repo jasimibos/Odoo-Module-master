@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="stock_valuation_layer_tree_categ_id" model="ir.ui.view">
+        <field name="name">stock.valuation.layer.categ.tree</field>
+        <field name="model">stock.valuation.layer</field>
+        <field name="inherit_id" ref="stock_account.stock_valuation_layer_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="categ_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="stock_valuation_layer_categ_filter" model="ir.ui.view">
+        <field name="name">stock.valuation.layer.categ.filter</field>
+        <field name="model">stock.valuation.layer</field>
+        <field name="inherit_id" ref="stock_account.stock_valuation_layer_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="categ_id"/>
+                <filter string="Category" name="categ_id" context="{'group_by':'categ_id'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

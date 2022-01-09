@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="sales_report_style" name="pos assets" inherit_id="point_of_sale.assets">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/ibos_pos_sales_report/static/src/style.css"/>
+        </xpath>
+    </template>
+</odoo>

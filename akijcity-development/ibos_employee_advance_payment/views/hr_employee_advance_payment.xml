@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="hr_employee_advance_payment_form" model="ir.ui.view">
+        <field name="name">hr.employee.advance.payment.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='parent_id']" position="after">
+                <field name="is_advance_payment_adjustment"/>
+                <field name="payment_adjustment_accounting_head" attrs="{'invisible': [('is_advance_payment_adjustment', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

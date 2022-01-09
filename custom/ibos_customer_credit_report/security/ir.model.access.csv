@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_customer_credit_user,wizard.customer.credit,model_wizard_customer_credit,base.group_user,1,1,1,1
+

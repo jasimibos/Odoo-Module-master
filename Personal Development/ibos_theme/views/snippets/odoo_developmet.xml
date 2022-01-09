@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="odoo_development_path" inherit_id="website.snippets" name="Odoo Development">
+        <xpath expr="//div[@id='snippet_structure']/div[hasclass('o_panel_body')]" position="inside">
+            <t t-snippet="ibos_theme.odoo_development"/>
+        </xpath>
+    </template>
+
+    <template id="odoo_development" name="Odoo Development">
+        <!-- section insta starts here -->
+        <section class="development-service">
+            <div class="container">
+                <div class="heading text-center pb-4">
+                    <div class="badge badge-alpha-soft rounded-circle mb-4 p-3">
+                        <i class="lnr lnr-code fa-3x"></i>
+                    </div>
+                    <h3>Odoo Development Services</h3>
+                </div>
+                <div class="service">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-2 shadow lift hover-shadow-lg flex-row align-items-center px-4 py-3"
+                                     style="width: 100%;">
+                                    <h5 class="card-image mb-0">
+                                        <div class="badge badge-alpha rounded-circle p-3">
+                                            <i class="lnr lnr-layers fa-2x"></i>
+                                        </div>
+                                    </h5>
+                                    <div class="sm-card-content text-left ml-3">
+                                        <h6 class="card-title mb-0">New Odoo Modules</h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-2 shadow lift hover-shadow-lg flex-row align-items-center px-4 py-3"
+                                     style="width: 100%;">
+                                    <h5 class="card-image mb-0">
+                                        <div class="badge badge-beta rounded-circle p-3">
+                                            <i class="lnr lnr-cog fa-2x"></i>
+                                        </div>
+                                    </h5>
+                                    <div class="sm-card-content text-left ml-3">
+                                        <h6 class="card-title mb-0">Module Customizations</h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-2 shadow lift hover-shadow-lg flex-row align-items-center px-4 py-3"
+                                     style="width: 100%;">
+                                    <h5 class="card-image mb-0">
+                                        <div class="badge badge-delta rounded-circle p-3">
+                                            <i class="lnr lnr-cloud-sync fa-2x"></i>
+                                        </div>
+                                    </h5>
+                                    <div class="sm-card-content text-left ml-3">
+                                        <h6 class="card-title mb-0">API Integrations</h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-2 shadow lift hover-shadow-lg flex-row align-items-center px-4 py-3"
+                                     style="width: 100%;">
+                                    <h5 class="card-image mb-0">
+                                        <div class="badge badge-gamma rounded-circle p-3">
+                                            <i class="lnr lnr-sync fa-2x"></i>
+                                        </div>
+                                    </h5>
+                                    <div class="sm-card-content text-left ml-3">
+                                        <h6 class="card-title mb-0">Module Migrations</h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-2 shadow lift hover-shadow-lg flex-row align-items-center px-4 py-3"
+                                     style="width: 100%;">
+                                    <h5 class="card-image mb-0">
+                                        <div class="badge badge-epsilon rounded-circle p-3">
+                                            <i class="lnr lnr-printer fa-2x"></i>
+                                        </div>
+                                    </h5>
+                                    <div class="sm-card-content text-left ml-3">
+                                        <h6 class="card-title mb-0">Report Customization</h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-2 shadow lift hover-shadow-lg flex-row align-items-center px-4 py-3"
+                                     style="width: 100%;">
+                                    <h5 class="card-image mb-0">
+                                        <div class="badge badge-info rounded-circle p-3">
+                                            <i class="lnr lnr-chart-bars fa-2x"></i>
+                                        </div>
+                                    </h5>
+                                    <div class="sm-card-content text-left ml-3">
+                                        <h6 class="card-title mb-0">BI Tools</h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-2 shadow lift hover-shadow-lg flex-row align-items-center px-4 py-3"
+                                     style="width: 100%;">
+                                    <h5 class="card-image mb-0">
+                                        <div class="badge badge-beta rounded-circle p-3">
+                                            <i class="lnr lnr-cart fa-2x"></i>
+                                        </div>
+                                    </h5>
+                                    <div class="sm-card-content text-left ml-3">
+                                        <h6 class="card-title mb-0">IAP Apps</h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-2 shadow lift hover-shadow-lg flex-row align-items-center px-4 py-3"
+                                     style="width: 100%;">
+                                    <h5 class="card-image mb-0">
+                                        <div class="badge badge-primary rounded-circle p-3">
+                                            <i class="lnr lnr-select fa-2x"></i>
+                                        </div>
+                                    </h5>
+                                    <div class="sm-card-content text-left ml-3">
+                                        <h6 class="card-title mb-0">Backend Views</h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-2 shadow lift hover-shadow-lg flex-row align-items-center px-4 py-3"
+                                     style="width: 100%;">
+                                    <h5 class="card-image mb-0">
+                                        <div class="badge badge-gamma rounded-circle p-3">
+                                            <i class="lnr lnr-code fa-2x"></i>
+                                        </div>
+                                    </h5>
+                                    <div class="sm-card-content text-left ml-3">
+                                        <h6 class="card-title mb-0">JavaScript Development</h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-2 shadow lift hover-shadow-lg flex-row align-items-center px-4 py-3"
+                                     style="width: 100%;">
+                                    <h5 class="card-image mb-0">
+                                        <div class="badge badge-delta rounded-circle p-3">
+                                            <i class="lnr lnr-highlight fa-2x"></i>
+                                        </div>
+                                    </h5>
+                                    <div class="sm-card-content text-left ml-3">
+                                        <h6 class="card-title mb-0">Website &amp; Themes</h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-2 shadow lift hover-shadow-lg flex-row align-items-center px-4 py-3"
+                                     style="width: 100%;">
+                                    <h5 class="card-image mb-0">
+                                        <div class="badge badge-info rounded-circle p-3">
+                                            <i class="lnr lnr-store fa-2x"></i>
+                                        </div>
+                                    </h5>
+                                    <div class="sm-card-content text-left ml-3">
+                                        <h6 class="card-title mb-0">POS &amp; IoT</h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-service">
+                                <div class="card py-2 shadow lift hover-shadow-lg flex-row align-items-center px-4 py-3"
+                                     style="width: 100%;">
+                                    <h5 class="card-image mb-0">
+                                        <div class="badge badge-dark rounded-circle p-3">
+                                            <i class="lnr lnr-coffee-cup fa-2x"></i>
+                                        </div>
+                                    </h5>
+                                    <div class="sm-card-content text-left ml-3">
+                                        <h6 class="card-title mb-0">Offshore Resources</h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <a href="./singleService.html" class="btn btn-primary mt-4">
+                            <span>See Full Details</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- section insta ends here -->
+    </template>
+</odoo>

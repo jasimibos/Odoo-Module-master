@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="credit_sale">
+            <t t-call="web.html_container">
+                <!--            <t t-call="web.basic_layout">-->
+                <t t-call="ibos_pos_credit_sales_report.new_internal_layout">
+                    <div class="page">
+                        <div class="container">
+                            <div class="purchase-return-inner"
+                                 style="display: flex;justify-content: space-between;flex-direction: column;position: relative;">
+                                <div>
+                                    <h3 style="text-align:center;">Employee Credit Report</h3>
+
+                                    <p style="margin:20px 0">Business Unit:
+                                        <span t-esc="branch_name"/>
+                                    </p>
+
+                                    <p style="margin:20px 0">Print Date:
+                                        <span t-esc="current_date" widget="date"/>
+                                    </p>
+                                </div>
+                                <div class="purchase-return-table" style="padding-bottom: 75px;">
+                                    <table class="table table-sm">
+                                        <thead>
+                                            <tr>
+                                                <th>SL</th>
+                                                <th>Contact ID</th>
+                                                <th>Name</th>
+                                                <th>Phone</th>
+                                                <th>Total Purchase</th>
+                                                <th>Total Return</th>
+                                                <th>Net Purchase</th>
+                                                <th>Remaining</th>
+                                                <th>Limit</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <t t-if="data">
+                                                <t t-foreach="data" t-as="d">
+                                                    <tr>
+                                                        <td>
+                                                            <t t-esc="d['SL']"/>
+                                                        </td>
+                                                        <td>
+                                                            <t t-esc="d['contact_id']"/>
+                                                        </td>
+                                                        <td>
+                                                            <t t-esc="d['name']"/>
+                                                        </td>
+                                                        <td>
+                                                            <t t-esc="d['phone']"/>
+                                                        </td>
+                                                        <td>
+                                                            <t t-esc="d['total_purchase']"/>
+                                                        </td>
+                                                        <td>
+                                                            <t t-esc="d['total_return']"/>
+                                                        </td>
+
+                                                        <td>
+                                                            <t t-esc="d['credit_consumed']"/>
+                                                        </td>
+                                                        <td>
+                                                            <t t-esc="d['credit_remaining']"/>
+                                                        </td>
+                                                        <td>
+                                                            <t t-esc="d['credit_limit']"/>
+                                                        </td>
+                                                    </tr>
+                                                </t>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td style="font-weight: bolder;"><b>Total</b></td>
+                                                    <td style="font-weight: bolder;"><b><t t-esc="total_limit"/></b></td>
+                                                    <td style="font-weight: bolder;"><b><t t-esc="total_credit"/></b></td>
+                                                    <td style="font-weight: bolder;"><b><t t-esc="total_remainder"/></b></td>
+                                                </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="row purchase-return-footer">
+                                    <div class="col-3 h-30">
+                                        <p>
+                                            <b>Reported By</b>
+                                        </p>
+                                    </div>
+                                    <div class="col-6 h-30"></div>
+                                    <div class="col-3 h-30">
+                                        <p>
+                                            <b>Authorized By</b>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

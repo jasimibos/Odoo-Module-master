@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="product_page_path" inherit_id="website.snippets" name="Product Page">
+        <xpath expr="//div[@id='snippet_structure']/div[hasclass('o_panel_body')]" position="inside">
+            <t t-snippet="ibos_theme.product_page"/>
+        </xpath>
+    </template>
+
+    <template id="product_page" name="Product Page">
+        <!-- section insta starts here -->
+        <section class="featured spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title">
+                            <h2>Featured Product</h2>img
+                        </div>
+                        <div class="featured__controls">
+                            <ul>
+                                <li class="active" data-filter="*">All</li>
+                                <li data-filter=".oranges">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                       aria-controls="home" aria-selected="true" data-filter="hdpe">Hot Sales
+                                    </a>
+                                </li>
+                                <li data-filter=".fresh-meat">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                       aria-controls="home" aria-selected="true" data-filter="hdpe">Hot Sales
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row featured__filter" id="MixItUp08D6A3">
+                    <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                        <div class="featured__item">
+                            <t t-foreach="hot_deals" t-as="hot_deal" t-if="hot_deals">
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-12 filter hdpe">
+                                    <a t-attf-href="/shop/product/#{slug(hot_deal)}">
+                                        <div class="wrapper">
+                                            <div class="img_wrapper">
+                                                <img t-attf-src="/web/image?model=product.template&amp;field=image_1920&amp;id=#{hot_deal.id}"
+                                                     class="img img-fluid rotate-center" alt="" loading="lazy"/>
+                                                <div class="sale">Sale</div>
+                                            </div>
+                                            <div class="img_details">
+                                                <a class="add_to_c" t-attf-href="/shop/product/#{slug(hot_deal)}">
+                                                    Click to open
+                                                </a>
+                                                <h5 class="product_name">
+                                                    <span t-if="hot_deal" t-esc="hot_deal.display_name"/>
+                                                </h5>
+                                                <div class="wrappr">
+                                                    <div class="price">
+                                                        <span t-if="hot_deal" t-esc="res_company.currency_id.symbol"/>
+                                                        <span t-if="hot_deal" t-esc="hot_deal.list_price"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </t>
+                            <div class="featured__item__text">
+                                <h6>
+                                    <a href="#">Crab Pool Security</a>
+                                </h6>
+                                <h5>$30.00</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
+                        <div class="featured__item">
+                            <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-2.jpg"
+                                 style="background-image: url(&quot;img/featured/feature-2.jpg&quot;);">
+                                <ul class="featured__item__pic__hover">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-heart"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-retweet"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-shopping-cart"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="featured__item__text">
+                                <h6>
+                                    <a href="#">Crab Pool Security</a>
+                                </h6>
+                                <h5>$30.00</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fresh-meat">
+                        <div class="featured__item">
+                            <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-3.jpg"
+                                 style="background-image: url(&quot;img/featured/feature-3.jpg&quot;);">
+                                <ul class="featured__item__pic__hover">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-heart"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-retweet"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-shopping-cart"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="featured__item__text">
+                                <h6>
+                                    <a href="#">Crab Pool Security</a>
+                                </h6>
+                                <h5>$30.00</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood oranges">
+                        <div class="featured__item">
+                            <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-4.jpg"
+                                 style="background-image: url(&quot;img/featured/feature-4.jpg&quot;);">
+                                <ul class="featured__item__pic__hover">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-heart"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-retweet"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-shopping-cart"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="featured__item__text">
+                                <h6>
+                                    <a href="#">Crab Pool Security</a>
+                                </h6>
+                                <h5>$30.00</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
+                        <div class="featured__item">
+                            <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-5.jpg"
+                                 style="background-image: url(&quot;img/featured/feature-5.jpg&quot;);">
+                                <ul class="featured__item__pic__hover">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-heart"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-retweet"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-shopping-cart"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="featured__item__text">
+                                <h6>
+                                    <a href="#">Crab Pool Security</a>
+                                </h6>
+                                <h5>$30.00</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fastfood">
+                        <div class="featured__item">
+                            <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-6.jpg"
+                                 style="background-image: url(&quot;img/featured/feature-6.jpg&quot;);">
+                                <ul class="featured__item__pic__hover">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-heart"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-retweet"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-shopping-cart"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="featured__item__text">
+                                <h6>
+                                    <a href="#">Crab Pool Security</a>
+                                </h6>
+                                <h5>$30.00</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
+                        <div class="featured__item">
+                            <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-7.jpg"
+                                 style="background-image: url(&quot;img/featured/feature-7.jpg&quot;);">
+                                <ul class="featured__item__pic__hover">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-heart"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-retweet"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-shopping-cart"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="featured__item__text">
+                                <h6>
+                                    <a href="#">Crab Pool Security</a>
+                                </h6>
+                                <h5>$30.00</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood vegetables">
+                        <div class="featured__item">
+                            <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-8.jpg"
+                                 style="background-image: url(&quot;img/featured/feature-8.jpg&quot;);">
+                                <ul class="featured__item__pic__hover">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-heart"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-retweet"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-shopping-cart"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="featured__item__text">
+                                <h6>
+                                    <a href="#">Crab Pool Security</a>
+                                </h6>
+                                <h5>$30.00</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section insta ends here -->
+    </template>
+</odoo>

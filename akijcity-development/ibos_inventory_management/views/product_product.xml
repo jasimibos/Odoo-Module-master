@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="product_product_weight_scale_machine" model="ir.ui.view">
+        <field name="name">product.product.weight.scale.machine</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='default_code']" position="before">
+                <field name="plu_no" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_product_weight_scale_machine_tree" model="ir.ui.view">
+        <field name="name">product.product.weight.scale.machine.tree</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_product_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='default_code']" position="before">
+                <field name="plu_no" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

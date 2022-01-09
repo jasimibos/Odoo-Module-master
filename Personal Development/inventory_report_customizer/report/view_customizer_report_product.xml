@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+     <record id="view_inventory_product_customize_report" model="ir.ui.view">
+            <field name="name">product.margin.tree</field>
+            <field name="model">inventory.report.customize</field>
+            <field name="priority" eval="50"/>
+            <field name="arch" type="xml">
+                <tree string="Product Margins">
+                    <field name="to_date"/>
+                    <field name="status"/>
+
+            </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

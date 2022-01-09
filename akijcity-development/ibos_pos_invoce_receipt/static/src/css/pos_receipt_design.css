@@ -1,0 +1,63 @@
+/*POS receipt orderline style*/
+
+.Discounts {
+    font-size: 12px !important;
+}
+
+.Discounts .Discounts_level {
+    margin-right: 20px !important;
+}
+
+.Subtotal {
+    font-size: 12px !important;
+}
+
+.Subtotal .Subtotal_level {
+    margin-right: 20px !important;
+}
+
+.tax {
+    font-size: 12px !important;
+}
+
+.total_tax {
+    font-size: 12px !important;
+}
+
+.Totall_amount {
+    font-size: 12px !important;
+}
+
+.payment_type_name {
+    font-size: 12px !important;
+    display: flow-root;
+    width: 100%;
+}
+
+.receipt-change {
+    font-size: 12px !important;
+}
+
+.due {
+    font-size: 12px !important;
+}
+
+.website{
+    margin-top: 8px !important;
+    margin-bottom: -20px !important;
+}
+
+.footerclas1{
+    margin-top: 10px;
+}
+
+.barcode_{
+    margin-top: 15px !important;
+
+}
+
+.paymentline_class{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}

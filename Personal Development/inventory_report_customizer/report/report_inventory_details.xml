@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_inventory_type_details">
+        <t t-call="web.html_container">
+            <t t-call="web.internal_layout">
+                <div class="page">
+                    <div class="oe_structure"/>
+
+                    <h3>Inventory Report Details</h3>
+
+                    <p>
+                        <span t-esc="state"/>
+                    </p>
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Product Name</th>
+                                <th>Product Quantity</th>
+                                <th>Warehouse Name</th>
+                                <th>Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <t t-foreach="data" t-as="d">
+                                <tr>
+
+                                    <td>
+                                        <span t-esc="d['date']"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="d['pname']"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="d['qty']"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="d['warehouse']"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="d['location']"/>
+                                    </td>
+
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+
+</odoo>
+
+
+
+
+
+

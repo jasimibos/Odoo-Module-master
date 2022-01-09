@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- === Services Page === -->
+    <record id="category_page" model="website.page">
+        <field name="name">Category Page</field>
+        <field name="website_published">True</field>
+        <field name="url">/category</field>
+        <field name="type">qweb</field>
+        <field name="key">ibos_ecommerce.category_page</field>
+        <field name="arch" type="xml">
+            <t t-name="ibos_ecommerce.category_page_template">
+                <t t-call="website.layout">
+                    <h1>Category Page</h1>
+
+
+                    <div class="row featured__filter" id="MixItUpDBA2B9" style="">
+                        <t t-foreach="category" t-as="category">
+
+                            <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat" style="">
+                                <div class="featured__item">
+                                    <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-1.jpg"
+                                         style="background-image: url(&quot;img/featured/feature-1.jpg&quot;);">
+
+                                        <img t-attf-src="/web/image?model=product.public.category&amp;field=image_128&amp;id=#{category.id}"
+                                             class="img img-fluid rotate-center" alt="" loading="lazy"/>
+                                        <ul class="featured__item__pic__hover">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-heart"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-retweet"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="featured__item__text">
+                                        <h6>
+                                            <a href="#">
+                                                <t t-esc="category.name"/>
+                                            </a>
+                                        </h6>
+                                        <h5>
+                                           Hello
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+    <record id="product_page_link" model="website.menu">
+        <field name="name">Category</field>
+        <field name="page_id" ref="category_page"/>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">91</field>
+    </record>
+
+</odoo>

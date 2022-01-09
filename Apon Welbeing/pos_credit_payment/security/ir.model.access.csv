@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+pos_credit_payment_sale_manager_user,pos_credit_payment_sale_manager_username,pos_credit_payment.model_partner_credit,sales_team.group_sale_manager,1,1,1,1
+pos_credit_payment_employee_user,pos_credit_payment_employee_username,pos_credit_payment.model_partner_credit,base.group_user,1,1,1,0
+access_credit_history_manager,credit.history.manager,model_credit_history,,1,1,1,1
+access_update_credit_history_manager,update.credit.history.manager,model_update_credit_history,,1,1,1,1
+access_update_credit_history_payment_manager,update.credit.history.payment.manager,model_update_credit_history_payment,,1,1,1,1
+access_credit_account,access_credit_account,model_credit_account,base.group_user,1,1,1,1
+

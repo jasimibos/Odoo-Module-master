@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_stock_product_scrap">
+        <t t-call="web.html_container">
+            <t t-set="data_report_margin_top" t-value="12"/>
+            <t t-set="data_report_header_spacing" t-value="9"/>
+            <t t-set="data_report_dpi" t-value="110"/>
+            <t t-set="total_qty" t-value="0"/>
+            <t t-set="total_amount" t-value="0"/>
+            <t t-set="total_sub_amount" t-value="0"/>
+            <t t-set="total_unit_price" t-value="0"/>
+            <t t-call="web.internal_layout">
+                <link rel="stylesheet" type="text/css" href="/ibos_scrap_product_report/static/src/css/style.css"/>
+                <div class="page">
+                    <br/>
+                    <br/>
+                    <br/>
+
+                    <h2 class="text-center">Scrap/Damage Product Report</h2>
+                    <div class="row">
+                        <div class="sorted_by" style="width:70%;">
+                            <strong>Sorted By:</strong>
+                            <p t-if="data['sortby'] == 'date'">Date</p>
+                            <p t-if="data['sortby'] == 'location_id'">Location</p>
+                        </div>
+                        <div style="width:30%;">
+                            <t t-if="data['date_from']">
+                                <strong>Date from :</strong>
+                                <span t-esc="data['date_from']"/>
+                                <br/>
+                            </t>
+                            <t t-if="data['date_to']">
+                                <strong>Date to :</strong>
+                                <span t-esc="data['date_to']"/>
+                            </t>
+                        </div>
+                    </div>
+                    <br/>
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Product</th>
+                                <th>Source</th>
+                                <th>From</th>
+                                <th>Quantity</th>
+                                <th>Unit Price</th>
+                                <th class="text-right">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="lines" t-as="line">
+                                <td>
+                                    <t t-esc="line.date"/>
+                                </td>
+                                <td>
+                                    <t t-esc="line.product_id.name"/>
+                                </td>
+                                <td>
+                                    <t t-esc="line.origin"/>
+                                </td>
+                                <td>
+                                    <field t-esc="line.location_id.location_id.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <t t-set="total_qty" t-value="total_qty + line.qty_done"/>
+                                    <field t-esc="line.qty_done"/> <field t-esc="line.product_uom_id.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <t t-set="total_unit_price" t-value="total_sub_amount + line.standard_price"/>
+                                    <t t-set="total_sub_amount" t-value="line.standard_price * line.qty_done"/>
+                                    <t t-set="total_amount" t-value="total_amount + (line.standard_price * line.qty_done)"/>
+                                    <field t-esc="line.standard_price"/>
+                                </td>
+                                <td class="text-right">
+                                    <field t-esc="total_sub_amount" t-options = '{"widget": "float", "precision": 2}'/>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfooter>
+                            <tr>
+                                <td colspan="3"></td>
+                                <td>Total</td>
+                                <td class="text-right">
+                                    <t t-esc="total_qty" t-options = '{"widget": "float", "precision": 2}'/>
+                                </td>
+                                <td class="text-right">
+                                    <t t-esc="total_unit_price" t-options = '{"widget": "float", "precision": 2}'/>
+                                </td>
+                                <td class="text-right">
+                                    <t t-esc="total_amount" t-options = '{"widget": "float", "precision": 2}'/>
+                                </td>
+                            </tr>
+                        </tfooter>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
